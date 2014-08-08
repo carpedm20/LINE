@@ -1,5 +1,0 @@
-Core LINE API
-=============
-
-.. autoclass:: line.api
-    :members:

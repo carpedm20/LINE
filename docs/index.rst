@@ -1,6 +1,8 @@
 LINE manual
 ===========
 
+
+
 Introduction
 ------------
 
@@ -12,8 +14,7 @@ Enjoy *line* and *May the LINE be with you...*
 
 .. warning::
 
-    This library is under developement so name of variables, methods or functions
-    can be change without any notification. So, read the documentaion carefully.
+   Some codes are removed because of the request of LINE corporation. (2014.08.08)
 
 Key Features
 ------------
