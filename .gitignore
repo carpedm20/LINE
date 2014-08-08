@@ -1,5 +1,13 @@
 *py[co]
 
+#test
+*.sh
+*test*
+*backup*
+
+#thrift
+*thrift
+
 # Packages
 *.egg
 *.egg-info

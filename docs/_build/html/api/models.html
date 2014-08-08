@@ -1,0 +1,397 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Models &mdash; LINE api doc 0.1.5 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/flasky.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.ico"/>
+    <link rel="top" title="LINE api doc 0.1.5 documentation" href="../index.html" />
+    <link rel="next" title="LineAPI" href="api.html" />
+    <link rel="prev" title="LineClient" href="client.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body>
+  
+  
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="api.html" title="LineAPI"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="client.html" title="LineClient"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">LINE api doc 0.1.5 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="models">
+<h1>Models<a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This page intorduce you a list of core models which is used in LINE API.
+The name of each models tell you what it is intuitively.
+In most cases, you don&#8217;t have to create this instances, but if you want to change
+<em>line</em>, I hope this documents wil help you to find what you want.</p>
+</div>
+<div class="section" id="linemessage">
+<h2>LineMessage<a class="headerlink" href="#linemessage" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="line.LineMessage">
+<em class="property">class </em><tt class="descclassname">line.</tt><tt class="descname">LineMessage</tt><big>(</big><em>client</em>, <em>message</em><big>)</big><a class="headerlink" href="#line.LineMessage" title="Permalink to this definition">¶</a></dt>
+<dd><p>LineMessage wrapper</p>
+</dd></dl>
+
+</div>
+<div class="section" id="linebase">
+<h2>LineBase<a class="headerlink" href="#linebase" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="line.LineBase">
+<em class="property">class </em><tt class="descclassname">line.</tt><tt class="descname">LineBase</tt><a class="headerlink" href="#line.LineBase" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="line.LineBase.getRecentMessages">
+<tt class="descname">getRecentMessages</tt><big>(</big><em>count=1</em><big>)</big><a class="headerlink" href="#line.LineBase.getRecentMessages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get recent messages</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>count</strong> &#8211; count of messages to get</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineBase.sendImage">
+<tt class="descname">sendImage</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#line.LineBase.sendImage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send a image</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> &#8211; local path of image to send</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineBase.sendImageWithURL">
+<tt class="descname">sendImageWithURL</tt><big>(</big><em>url</em><big>)</big><a class="headerlink" href="#line.LineBase.sendImageWithURL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send a image with given image url</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>url</strong> &#8211; image url to send</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineBase.sendMessage">
+<tt class="descname">sendMessage</tt><big>(</big><em>text</em><big>)</big><a class="headerlink" href="#line.LineBase.sendMessage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send a message</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>text</strong> &#8211; text message to send</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineBase.sendSticker">
+<tt class="descname">sendSticker</tt><big>(</big><em>stickerId='13'</em>, <em>stickerPackageId='1'</em>, <em>stickerVersion='100'</em>, <em>stickerText='[null]'</em><big>)</big><a class="headerlink" href="#line.LineBase.sendSticker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send a sticker</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>stickerId</strong> &#8211; id of sticker</li>
+<li><strong>stickerPackageId</strong> &#8211; package id of sticker</li>
+<li><strong>stickerVersion</strong> &#8211; version of sticker</li>
+<li><strong>stickerText</strong> &#8211; text of sticker (default=&#8217;[null]&#8217;)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="linecontct">
+<h2>LineContct<a class="headerlink" href="#linecontct" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="line.LineContact">
+<em class="property">class </em><tt class="descclassname">line.</tt><tt class="descname">LineContact</tt><big>(</big><em>client</em>, <em>contact</em><big>)</big><a class="headerlink" href="#line.LineContact" title="Permalink to this definition">¶</a></dt>
+<dd><p>LineContact wrapper</p>
+<dl class="docutils">
+<dt>Attributes:</dt>
+<dd>name            display name of contact
+statusMessage   status message of contact</dd>
+</dl>
+<p>LineContact init</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>client</strong> &#8211; LineClient instance</li>
+<li><strong>contact</strong> &#8211; Conatct instace</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="line.LineContact.groups">
+<tt class="descname">groups</tt><a class="headerlink" href="#line.LineContact.groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Groups that contact participates</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="line.LineContact.rooms">
+<tt class="descname">rooms</tt><a class="headerlink" href="#line.LineContact.rooms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rooms that contact participates</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="lineroom">
+<h2>LineRoom<a class="headerlink" href="#lineroom" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="line.LineRoom">
+<em class="property">class </em><tt class="descclassname">line.</tt><tt class="descname">LineRoom</tt><big>(</big><em>client</em>, <em>room</em><big>)</big><a class="headerlink" href="#line.LineRoom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Chat room wrapper</p>
+<dl class="docutils">
+<dt>Attributes:</dt>
+<dd>contacts           Contact list of chat room</dd>
+</dl>
+<p>LineContact init</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>client</strong> &#8211; LineClient instance</li>
+<li><strong>room</strong> &#8211; Room instace</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="line.LineRoom.getContactIds">
+<tt class="descname">getContactIds</tt><big>(</big><big>)</big><a class="headerlink" href="#line.LineRoom.getContactIds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get contact ids of room</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineRoom.invite">
+<tt class="descname">invite</tt><big>(</big><em>contact</em><big>)</big><a class="headerlink" href="#line.LineRoom.invite" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invite into group</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>contact</strong> &#8211; LineContact instance to invite</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineRoom.leave">
+<tt class="descname">leave</tt><big>(</big><big>)</big><a class="headerlink" href="#line.LineRoom.leave" title="Permalink to this definition">¶</a></dt>
+<dd><p>Leave room</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="linegroup">
+<h2>LineGroup<a class="headerlink" href="#linegroup" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="line.LineGroup">
+<em class="property">class </em><tt class="descclassname">line.</tt><tt class="descname">LineGroup</tt><big>(</big><em>client</em>, <em>group=None</em>, <em>is_joined=True</em><big>)</big><a class="headerlink" href="#line.LineGroup" title="Permalink to this definition">¶</a></dt>
+<dd><p>LineGroup wrapper</p>
+<dl class="docutils">
+<dt>Attributes:</dt>
+<dd>creator     contact of group creator
+members     list of contact of group members
+invitee     list of contact of group invitee</dd>
+</dl>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">group</span> <span class="o">=</span> <span class="n">LineGroup</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">client</span><span class="o">.</span><span class="n">groups</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>LineGroup init</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>client</strong> &#8211; LineClient instance</li>
+<li><strong>group</strong> &#8211; Group instace</li>
+<li><strong>is_joined</strong> &#8211; is a user joined or invited to a group</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="line.LineGroup.getMemberIds">
+<tt class="descname">getMemberIds</tt><big>(</big><big>)</big><a class="headerlink" href="#line.LineGroup.getMemberIds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get member ids of group</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineGroup.leave">
+<tt class="descname">leave</tt><big>(</big><big>)</big><a class="headerlink" href="#line.LineGroup.leave" title="Permalink to this definition">¶</a></dt>
+<dd><p>Leave group</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+    <a href="../index.html">
+        <img src="../_static/logo.png" width="200px"/>
+    </a>
+
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Models</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#linemessage">LineMessage</a></li>
+<li><a class="reference internal" href="#linebase">LineBase</a></li>
+<li><a class="reference internal" href="#linecontct">LineContct</a></li>
+<li><a class="reference internal" href="#lineroom">LineRoom</a></li>
+<li><a class="reference internal" href="#linegroup">LineGroup</a></li>
+</ul>
+</li>
+</ul>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="client.html" title="previous chapter">LineClient</a></li>
+      <li>Next: <a href="api.html" title="next chapter">LineAPI</a></li>
+  </ul></li>
+</ul>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/models.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+  <h3>Useful links:</h3>
+  <ul>
+    <li><a href="https://github.com/carpedm20/line">Github Repo</a></li>
+    <li><a href="https://github.com/carpedm20/line/issues">Issue Tracker</a></li>
+  </ul>
+  <p><b>Package:</b></p>
+  <ul>
+    <li>
+        <a href="http://badge.fury.io/py/line">
+            <img src="https://badge.fury.io/py/line.png"/>
+        </a>
+    </li>
+    <li>
+        <a href="https://crate.io/packages/line/">
+            <img src="https://pypip.in/d/line/badge.png"/>
+        </a>
+    </li>
+  </ul>
+  <p><b>Github:</b></p>
+  <ul>
+    <li>
+        <iframe 
+            src="http://ghbtns.com/github-btn.html?user=carpedm20&repo=line&type=watch&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20">
+        </iframe>
+    </li>
+    <li>
+        <iframe 
+            src="http://ghbtns.com/github-btn.html?user=carpedm20&repo=line&type=fork&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20">
+        </iframe>
+    </li>
+    <li>
+        <iframe 
+            src="http://ghbtns.com/github-btn.html?user=carpedm20&repo=line&type=follow&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="140" height="20">
+        </iframe>
+    </li>
+  </ul>
+  
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="footer">
+    &copy; Copyright 2014, Kim Tae Hoon.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  
+  </body>
+</html>

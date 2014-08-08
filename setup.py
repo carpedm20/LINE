@@ -38,18 +38,17 @@ assert version
 
 setup(
     name='line',
+    packages=['line'],
     version=version,
-    license='BSD',
+    description='May the LINE be with you...',
+    long_description=open('README.rst').read(),
+    license='BSD License',
     author='Taehoon Kim',
     author_email='carpedm20@gmail.com',
-    url='http://pythonhosted.org/line',
-    description='May the LINE be with you...',
-    long_description=__doc__,
-    platforms='any',
-    packages=find_packages(),
-    include_package_data=True,
+    url='http://carpedm20.github.io/line',
+    keywords=['line'],
     classifiers=[
-        'Development Status :: 0 - Beta',
+        'Development Status :: 2 - Pre-Alpha',
         'Environment :: Console',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
@@ -68,5 +67,9 @@ setup(
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
         'Topic :: Communications :: Chat',
     ],
-    install_requires=['setuptools'],
+    install_requires=[
+        'requests',
+        'curve',
+        'rsa'
+    ],
 )

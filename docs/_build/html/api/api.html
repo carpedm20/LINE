@@ -1,0 +1,355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>LineAPI &mdash; LINE api doc 0.1.5 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/flasky.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.ico"/>
+    <link rel="top" title="LINE api doc 0.1.5 documentation" href="../index.html" />
+    <link rel="prev" title="Models" href="models.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body>
+  
+  
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="models.html" title="Models"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">LINE api doc 0.1.5 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="lineapi">
+<h1>LineAPI<a class="headerlink" href="#lineapi" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This is a python wrapper of official LINE thirft API. There are other functions
+which is not implemented to <em>line</em> like <cite>kickoutFromGroup</cite> things, so you can add
+other API here and use it as your way.</p>
+</div>
+<div class="section" id="id1">
+<h2>LineAPI<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="line.LineAPI">
+<em class="property">class </em><tt class="descclassname">line.</tt><tt class="descname">LineAPI</tt><a class="headerlink" href="#line.LineAPI" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class is a wrapper of LINE API</p>
+<dl class="method">
+<dt id="line.LineAPI._acceptGroupInvitation">
+<tt class="descname">_acceptGroupInvitation</tt><big>(</big><em>groupId</em>, <em>seq=0</em><big>)</big><a class="headerlink" href="#line.LineAPI._acceptGroupInvitation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accept a group invitation</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineAPI._cancelGroupInvitation">
+<tt class="descname">_cancelGroupInvitation</tt><big>(</big><em>groupId</em>, <em>contactIds=</em>, <span class="optional">[</span><span class="optional">]</span><em>seq=0</em><big>)</big><a class="headerlink" href="#line.LineAPI._cancelGroupInvitation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cancel a group invitation</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineAPI._createGroup">
+<tt class="descname">_createGroup</tt><big>(</big><em>name</em>, <em>ids</em>, <em>seq=0</em><big>)</big><a class="headerlink" href="#line.LineAPI._createGroup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a group</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineAPI._createRoom">
+<tt class="descname">_createRoom</tt><big>(</big><em>ids</em>, <em>seq=0</em><big>)</big><a class="headerlink" href="#line.LineAPI._createRoom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a chat room</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineAPI._getAllContactIds">
+<tt class="descname">_getAllContactIds</tt><big>(</big><big>)</big><a class="headerlink" href="#line.LineAPI._getAllContactIds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all contacts of your LINE account</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineAPI._getBlockedContactIds">
+<tt class="descname">_getBlockedContactIds</tt><big>(</big><big>)</big><a class="headerlink" href="#line.LineAPI._getBlockedContactIds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all blocked contacts of your LINE account</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineAPI._getContacts">
+<tt class="descname">_getContacts</tt><big>(</big><em>ids</em><big>)</big><a class="headerlink" href="#line.LineAPI._getContacts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get contact information list from ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">List of Contact list
+- status
+- capableVideoCall
+- dispalyName
+- settings
+- pictureStatus
+- capableVoiceCall
+- capableBuddy
+- mid
+- displayNameOverridden
+- relation
+- <a href="#id2"><span class="problematic" id="id3">thumbnailUrl_</span></a>
+- createdTime
+- facoriteTime
+- capableMyhome
+- attributes
+- type
+- phoneticName
+- statusMessage</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineAPI._getGroupIdsInvited">
+<tt class="descname">_getGroupIdsInvited</tt><big>(</big><big>)</big><a class="headerlink" href="#line.LineAPI._getGroupIdsInvited" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get group id that you invited</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineAPI._getGroupIdsJoined">
+<tt class="descname">_getGroupIdsJoined</tt><big>(</big><big>)</big><a class="headerlink" href="#line.LineAPI._getGroupIdsJoined" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get group id that you joined</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineAPI._getGroups">
+<tt class="descname">_getGroups</tt><big>(</big><em>ids</em><big>)</big><a class="headerlink" href="#line.LineAPI._getGroups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of group with ids</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineAPI._getProfile">
+<tt class="descname">_getProfile</tt><big>(</big><big>)</big><a class="headerlink" href="#line.LineAPI._getProfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get profile information</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Profile object
+- picturePath
+- displayName
+- phone (base64 encoded?)
+- allowSearchByUserid
+- pictureStatus
+- userid
+- mid # used for unique id for account
+- phoneticName
+- regionCode
+- allowSearchByEmail
+- email
+- statusMessage</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineAPI._getRecentMessages">
+<tt class="descname">_getRecentMessages</tt><big>(</big><em>id</em>, <em>count=1</em><big>)</big><a class="headerlink" href="#line.LineAPI._getRecentMessages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get recent messages from <cite>id</cite></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineAPI._getRoom">
+<tt class="descname">_getRoom</tt><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#line.LineAPI._getRoom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a chat room</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineAPI._get_json">
+<tt class="descname">_get_json</tt><big>(</big><em>url</em><big>)</big><a class="headerlink" href="#line.LineAPI._get_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get josn from given url with saved session and headers</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineAPI._inviteIntoGroup">
+<tt class="descname">_inviteIntoGroup</tt><big>(</big><em>groupId</em>, <em>contactIds=</em>, <span class="optional">[</span><span class="optional">]</span><em>seq=0</em><big>)</big><a class="headerlink" href="#line.LineAPI._inviteIntoGroup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invite contacts into group</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineAPI._inviteIntoRoom">
+<tt class="descname">_inviteIntoRoom</tt><big>(</big><em>roomId</em>, <em>contactIds=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#line.LineAPI._inviteIntoRoom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invite contacts into room</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineAPI._leaveGroup">
+<tt class="descname">_leaveGroup</tt><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#line.LineAPI._leaveGroup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Leave a group</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineAPI._leaveRoom">
+<tt class="descname">_leaveRoom</tt><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#line.LineAPI._leaveRoom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Leave a chat room</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineAPI._sendMessage">
+<tt class="descname">_sendMessage</tt><big>(</big><em>message</em>, <em>seq=0</em><big>)</big><a class="headerlink" href="#line.LineAPI._sendMessage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send a message to <cite>id</cite>. <cite>id</cite> could be contact id or group id</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> &#8211; <cite>message</cite> instance</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineAPI.login">
+<tt class="descname">login</tt><big>(</big><big>)</big><a class="headerlink" href="#line.LineAPI.login" title="Permalink to this definition">¶</a></dt>
+<dd><p>Login to LINE server.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineAPI.raise_error">
+<tt class="descname">raise_error</tt><big>(</big><em>msg</em><big>)</big><a class="headerlink" href="#line.LineAPI.raise_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Error format</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineAPI.ready">
+<tt class="descname">ready</tt><big>(</big><big>)</big><a class="headerlink" href="#line.LineAPI.ready" title="Permalink to this definition">¶</a></dt>
+<dd><p>After login, make <cite>client</cite> and <cite>client_in</cite> instance
+to communicate with LINE server</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+    <a href="../index.html">
+        <img src="../_static/logo.png" width="200px"/>
+    </a>
+
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">LineAPI</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#id1">LineAPI</a></li>
+</ul>
+</li>
+</ul>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="models.html" title="previous chapter">Models</a></li>
+  </ul></li>
+</ul>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/api.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+  <h3>Useful links:</h3>
+  <ul>
+    <li><a href="https://github.com/carpedm20/line">Github Repo</a></li>
+    <li><a href="https://github.com/carpedm20/line/issues">Issue Tracker</a></li>
+  </ul>
+  <p><b>Package:</b></p>
+  <ul>
+    <li>
+        <a href="http://badge.fury.io/py/line">
+            <img src="https://badge.fury.io/py/line.png"/>
+        </a>
+    </li>
+    <li>
+        <a href="https://crate.io/packages/line/">
+            <img src="https://pypip.in/d/line/badge.png"/>
+        </a>
+    </li>
+  </ul>
+  <p><b>Github:</b></p>
+  <ul>
+    <li>
+        <iframe 
+            src="http://ghbtns.com/github-btn.html?user=carpedm20&repo=line&type=watch&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20">
+        </iframe>
+    </li>
+    <li>
+        <iframe 
+            src="http://ghbtns.com/github-btn.html?user=carpedm20&repo=line&type=fork&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20">
+        </iframe>
+    </li>
+    <li>
+        <iframe 
+            src="http://ghbtns.com/github-btn.html?user=carpedm20&repo=line&type=follow&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="140" height="20">
+        </iframe>
+    </li>
+  </ul>
+  
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="footer">
+    &copy; Copyright 2014, Kim Tae Hoon.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  
+  </body>
+</html>

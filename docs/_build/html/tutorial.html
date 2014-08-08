@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>LINE Episode I: A New Hope &mdash; LINE api doc 0.1.5 documentation</title>
+    
+    <link rel="stylesheet" href="_static/flasky.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/logo.ico"/>
+    <link rel="top" title="LINE api doc 0.1.5 documentation" href="index.html" />
+    <link rel="next" title="LineClient" href="api/client.html" />
+    <link rel="prev" title="LINE manual" href="index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body>
+  
+  
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="api/client.html" title="LineClient"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="LINE manual"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">LINE api doc 0.1.5 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="line-episode-i-a-new-hope">
+<h1>LINE Episode I: A New Hope<a class="headerlink" href="#line-episode-i-a-new-hope" title="Permalink to this headline">¶</a></h1>
+<p>If you are a core pythonic programmer, you can jump into writing the code
+right away! But if you are not familiar with Python, you should read this
+tutorial first before proceeding to the more details of <em>line</em>. Now, this
+manual will git you a quick introduction on how you can send a message and
+do other things with <em>line</em></p>
+<div class="section" id="part-1-login-and-pin-authentication">
+<h2>Part 1: Login and Pin authentication<a class="headerlink" href="#part-1-login-and-pin-authentication" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s start with login to LINE and pass through a pin authentication.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">line</span> <span class="kn">import</span> <span class="n">LineClient</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">LineClient</span><span class="p">(</span><span class="s">&quot;carpedm20@gmail.com&quot;</span><span class="p">,</span> <span class="s">&quot;xxxxxxxxxx&quot;</span><span class="p">)</span>
+<span class="go">Enter PinCode &#39;7390&#39; to your mobile phone in 2 minutes</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">LineClient</span><span class="p">(</span><span class="s">&quot;carpedm20&quot;</span><span class="p">,</span> <span class="s">&quot;xxxxxxxxxx&quot;</span><span class="p">)</span>
+<span class="go">Enter PinCode &#39;9779&#39; to your mobile phone in 2 minutes</span>
+</pre></div>
+</div>
+<p>As you can see, you can login by making a <cite>LineClient</cite> instance and pass your
+email and password as parameters. If you have a NAVER account and link it to
+LINE account, you can login with your NAVER account!</p>
+<p>Then, you will see a <cite>PinCode</cite> which you have to put in to your mobile phone
+to authenticate your <cite>LineClinet</cite> instance as a desktop Line client. This number
+will be expired in 2 minutes, so don&#8217;t be lazy!</p>
+<p>If you enter your <cite>Pincode</cite> to your mobile phone, now you can see your <cite>authToken</cite>
+which will notify your LINE session.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">authToken</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">authToken</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">authToken</span>
+<span class="go">DJg5VZTBdkjMCQOeodf4.9guiWkX1koTnwiGNVkacva.49blBzv5W9ex/2M06QQofByLxigMCAnnGfmTOAgY3wo=</span>
+</pre></div>
+</div>
+<p>With this <cite>authToken</cite>, you don&#8217;t have to enter <cite>Pincode</cite> when you create a new
+<cite>LineClient</cite> instance!</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">LineClient</span><span class="p">(</span><span class="n">authToken</span><span class="o">=</span><span class="n">authToken</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can save your authToken in cache like <em>redis</em> or something else!</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If the client will be expired after a specific time (I couldn&#8217;t find a exact
+time yet), so you have to get a new <cite>authToken</cite> after it is expired.</p>
+</div>
+</div>
+<div class="section" id="part-2-profile-and-contacts">
+<h2>Part 2: Profile and Contacts<a class="headerlink" href="#part-2-profile-and-contacts" title="Permalink to this headline">¶</a></h2>
+<p>Now, let&#8217;s see your profile to check whether <cite>PinCode</cite> authentication was
+successful or not.</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt; profile = client.profile
+&gt;&gt; print profile
+&lt;LineContact 김태훈&gt;
+</pre></div>
+</div>
+<p>You might want to send any <cite>message</cite> to your friend that you have succeeded
+to login to LINE! But you have to choose which one to send a <cite>message</cite>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">client</span><span class="o">.</span><span class="n">contacts</span>  <span class="c"># your friends</span>
+<span class="go">[&lt;LineContact 파랑봇&gt; &lt;LineContact 검정봇&gt;]</span>
+</pre></div>
+</div>
+<p>Then, choose anyone to send a hello world message, and send it away!</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">friend</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">contacts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">friend</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s">&quot;hello world!&quot;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>If you want to send a <cite>sticker</cite> (which is one of the most fun features of LINE!)</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">friend</span><span class="o">.</span><span class="n">sendSticker</span><span class="p">()</span> <span class="c"># send a default sticker</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">friend</span><span class="o">.</span><span class="n">sendSticker</span><span class="p">(</span><span class="n">stickerId</span><span class="o">=</span><span class="s">&quot;13&quot;</span><span class="p">,</span><span class="n">stickerPackageId</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="n">stickerVersion</span><span class="o">=</span><span class="s">&quot;100&quot;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>If you see <cite>True</cite> message, then it means message is successfully sended to your
+friend. If you want to receive 10 recent messages:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">messages</span> <span class="o">=</span> <span class="n">friend</span><span class="o">.</span><span class="n">getRecentMessages</span><span class="p">(</span><span class="n">count</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">messages</span>
+<span class="go">[LineMessage (contentType=NONE, sender=None, receiver=&lt;LineContact 파랑봇&gt;, msg=&quot;hello World!&quot;)]</span>
+</pre></div>
+</div>
+<p>I just make a one conversation with <em>파랑봇</em> so I only get one message with <cite>getRecentMessages</cite> method.</p>
+</div>
+<div class="section" id="part-3-rooms-and-groups">
+<h2>Part 3: Rooms and Groups<a class="headerlink" href="#part-3-rooms-and-groups" title="Permalink to this headline">¶</a></h2>
+<p>There are two type of chat rooms in LINE, one is just a <cite>room</cite> with multiple users,
+and the other is <cite>group</cite> which have more features then room. For examle, <cite>group</cite>
+has its own name but <cite>room</cite> don&#8217;t have any room for itself.</p>
+<p>Now let&#8217;s see a list of  <cite>group</cite> and <cite>room</cite> you are participated in.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">client</span><span class="o">.</span><span class="n">groups</span>
+<span class="go">[&lt;LineGroup 하트 #4&gt;, &lt;LineGroup 검정 #1 (invited)&gt;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">client</span><span class="o">.</span><span class="n">rooms</span>
+<span class="go">&lt;LineRoom [&lt;LineContact 파랑봇&gt;]&gt;, &lt;LineRoom [&lt;LineContact 파랑봇&gt;, &lt;LineContact 검정봇&gt;]&gt;]</span>
+</pre></div>
+</div>
+<p>In the case of <cite>client.groups</cite> you can see a word <em>(invited)</em> and this represent
+that you are invited to a group but you didn&#8217;t accep the invitation yet.
+&#8216;#{number}&#8217; means the number of members in the specific group.
+If you want to accept it:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">group</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">groups</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">group</span><span class="o">.</span><span class="n">acceptGroupInvitation</span><span class="p">()</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Other methods are same as the case of <cite>contact</cite> like if you want to get a
+list of recent messages, use <cite>getRecentMessages</cite> method:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">messages</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">contacts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">getRecentMessages</span><span class="p">(</span><span class="n">count</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">messages</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">groups</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">getRecentMessages</span><span class="p">(</span><span class="n">count</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you have too much groups and want to find a specific group with its <cite>name</cite>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">group</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">getGroupFromName</span><span class="p">(</span><span class="s">&#39;GROUP_NAME&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">contact</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">getContactFromName</span><span class="p">(</span><span class="s">&#39;CONTACT_NAME&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>There are other methods in <cite>contact</cite>, <cite>rooms</cite> and <cite>group</cite> instances so I&#8217;ll
+recommend you to take a look at the <em class="xref std std-ref">models</em> section.</p>
+</div>
+<div class="section" id="part-4-make-your-own-bot">
+<h2>Part 4: Make your own bot<a class="headerlink" href="#part-4-make-your-own-bot" title="Permalink to this headline">¶</a></h2>
+<p>So, most of you may want to use <em>line</em> to make your LINE bot. I also started this
+project to make a bot, so let&#8217;s talk about how to make our own bot. Below code
+is a basic structure of a LINE bot:</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">line</span> <span class="kn">import</span> <span class="n">LineClient</span><span class="p">,</span> <span class="n">LineGroup</span><span class="p">,</span> <span class="n">LineContact</span>
+
+<span class="k">try</span><span class="p">:</span>
+   <span class="n">client</span> <span class="o">=</span> <span class="n">LineClient</span><span class="p">(</span><span class="s">&quot;ID&quot;</span><span class="p">,</span> <span class="s">&quot;PASSWORD&quot;</span><span class="p">)</span>
+   <span class="c">#client = LineClient(authToken=&quot;AUTHTOKEN&quot;)</span>
+<span class="k">except</span><span class="p">:</span>
+   <span class="k">print</span> <span class="s">&quot;Login Failed&quot;</span>
+
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+   <span class="n">op_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="hll">   <span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="n">client</span><span class="o">.</span><span class="n">longPoll</span><span class="p">():</span>
+</span>      <span class="n">op_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">op</span><span class="p">)</span>
+
+   <span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="n">op_list</span><span class="p">:</span>
+      <span class="n">message</span> <span class="o">=</span> <span class="n">op</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+      <span class="n">sender</span>  <span class="o">=</span> <span class="n">op</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+      <span class="n">msg</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span>
+      <span class="n">sender</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>One of the most important line is #12, and you might notice there is a new
+method named <cite>longPoll</cite>. This method pull a list of operations which should
+be handled by our LINE bot. There are various type of operations, but
+our interest might be <cite>RECEIVE_MESSAGE</cite> operation. This operation contain a new
+message sent by other <cite>contact</cite>, <cite>room</cite> or <cite>group</cite>. So we can get a received
+<cite>message</cite> and its <cite>sender</cite> by</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">message</span> <span class="o">=</span> <span class="n">op</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">sender</span>  <span class="o">=</span> <span class="n">op</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+    <a href="index.html">
+        <img src="_static/logo.png" width="200px"/>
+    </a>
+
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">LINE Episode I: A New Hope</a><ul>
+<li><a class="reference internal" href="#part-1-login-and-pin-authentication">Part 1: Login and Pin authentication</a></li>
+<li><a class="reference internal" href="#part-2-profile-and-contacts">Part 2: Profile and Contacts</a></li>
+<li><a class="reference internal" href="#part-3-rooms-and-groups">Part 3: Rooms and Groups</a></li>
+<li><a class="reference internal" href="#part-4-make-your-own-bot">Part 4: Make your own bot</a></li>
+</ul>
+</li>
+</ul>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">LINE manual</a></li>
+      <li>Next: <a href="api/client.html" title="next chapter">LineClient</a></li>
+  </ul></li>
+</ul>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/tutorial.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+  <h3>Useful links:</h3>
+  <ul>
+    <li><a href="https://github.com/carpedm20/line">Github Repo</a></li>
+    <li><a href="https://github.com/carpedm20/line/issues">Issue Tracker</a></li>
+  </ul>
+  <p><b>Package:</b></p>
+  <ul>
+    <li>
+        <a href="http://badge.fury.io/py/line">
+            <img src="https://badge.fury.io/py/line.png"/>
+        </a>
+    </li>
+    <li>
+        <a href="https://crate.io/packages/line/">
+            <img src="https://pypip.in/d/line/badge.png"/>
+        </a>
+    </li>
+  </ul>
+  <p><b>Github:</b></p>
+  <ul>
+    <li>
+        <iframe 
+            src="http://ghbtns.com/github-btn.html?user=carpedm20&repo=line&type=watch&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20">
+        </iframe>
+    </li>
+    <li>
+        <iframe 
+            src="http://ghbtns.com/github-btn.html?user=carpedm20&repo=line&type=fork&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20">
+        </iframe>
+    </li>
+    <li>
+        <iframe 
+            src="http://ghbtns.com/github-btn.html?user=carpedm20&repo=line&type=follow&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="140" height="20">
+        </iframe>
+    </li>
+  </ul>
+  
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="footer">
+    &copy; Copyright 2014, Kim Tae Hoon.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  
+  </body>
+</html>

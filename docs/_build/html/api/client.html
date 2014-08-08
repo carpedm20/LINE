@@ -1,0 +1,489 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>LineClient &mdash; LINE api doc 0.1.5 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/flasky.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.ico"/>
+    <link rel="top" title="LINE api doc 0.1.5 documentation" href="../index.html" />
+    <link rel="next" title="Models" href="models.html" />
+    <link rel="prev" title="LINE Episode I: A New Hope" href="../tutorial.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body>
+  
+  
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="models.html" title="Models"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../tutorial.html" title="LINE Episode I: A New Hope"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">LINE api doc 0.1.5 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="lineclient">
+<h1>LineClient<a class="headerlink" href="#lineclient" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This is the most important class to use LINE with python. You have to make an
+instance of <cite>LineClient</cite> first and have to give your <cite>id</cite> and <cite>password</cite> as a
+parameters to login to LINE server. Then you should enter <cite>PinCode</cite> to pass
+through <cite>PinCode</cite> authentication</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">line</span> <span class="kn">import</span> <span class="n">LineClient</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">LineClient</span><span class="p">(</span><span class="s">&quot;carpedm20@gmail.com&quot;</span><span class="p">,</span> <span class="s">&quot;xxxxxxxxxx&quot;</span><span class="p">)</span>
+<span class="go">Enter PinCode &#39;7390&#39; to your mobile phone in 2 minutes</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">LineClient</span><span class="p">(</span><span class="s">&quot;carpedm20&quot;</span><span class="p">,</span> <span class="s">&quot;xxxxxxxxxx&quot;</span><span class="p">)</span>
+<span class="go">Enter PinCode &#39;9779&#39; to your mobile phone in 2 minutes</span>
+</pre></div>
+</div>
+<p>With <cite>authToken</cite> of your line instance, you don&#8217;t have to enter <cite>Pincode</cite>
+everytime when you create a new <cite>LineClient</cite> instance.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">LineClient</span><span class="p">(</span><span class="n">authToken</span><span class="o">=</span><span class="n">authToken</span><span class="p">)</span> <span class="c"># login with authToken</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>LineClient<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="line.LineClient">
+<em class="property">class </em><tt class="descclassname">line.</tt><tt class="descname">LineClient</tt><big>(</big><em>id=None</em>, <em>password=None</em>, <em>authToken=None</em>, <em>is_mac=True</em>, <em>com_name='carpedm20'</em><big>)</big><a class="headerlink" href="#line.LineClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provide a way to communicate with LINE server.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>id</strong> &#8211; <cite>NAVER id</cite> or <cite>LINE email</cite></li>
+<li><strong>password</strong> &#8211; LINE account password</li>
+<li><strong>authToken</strong> &#8211; LINE session key</li>
+<li><strong>is_mac</strong> &#8211; (optional) os setting</li>
+<li><strong>com_name</strong> &#8211; (optional) name of your system</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">LineClient</span><span class="p">(</span><span class="s">&quot;carpedm20&quot;</span><span class="p">,</span> <span class="s">&quot;xxxxxxxxxx&quot;</span><span class="p">)</span>
+<span class="go">Enter PinCode &#39;9779&#39; to your mobile phone in 2 minutes</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">LineClient</span><span class="p">(</span><span class="s">&quot;carpedm20@gmail.com&quot;</span><span class="p">,</span> <span class="s">&quot;xxxxxxxxxx&quot;</span><span class="p">)</span>
+<span class="go">Enter PinCode &#39;7390&#39; to your mobile phone in 2 minutes</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="line.LineClient.acceptGroupInvitation">
+<tt class="descname">acceptGroupInvitation</tt><big>(</big><em>group</em><big>)</big><a class="headerlink" href="#line.LineClient.acceptGroupInvitation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accept a group invitation</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>group</strong> &#8211; LineGroup instance</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineClient.addGroupsWithIds">
+<tt class="descname">addGroupsWithIds</tt><big>(</big><em>group_ids</em>, <em>is_joined=True</em><big>)</big><a class="headerlink" href="#line.LineClient.addGroupsWithIds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Refresh groups of LineClient</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineClient.createGroupWithContacts">
+<tt class="descname">createGroupWithContacts</tt><big>(</big><em>name</em>, <em>contacts=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#line.LineClient.createGroupWithContacts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a group with contacts</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> &#8211; name of group</li>
+<li><strong>contacts</strong> &#8211; list of contacts</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineClient.createGroupWithIds">
+<tt class="descname">createGroupWithIds</tt><big>(</big><em>ids=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#line.LineClient.createGroupWithIds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a group with contact ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> &#8211; name of group</li>
+<li><strong>ids</strong> &#8211; list of contact ids</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineClient.createRoomWithContacts">
+<tt class="descname">createRoomWithContacts</tt><big>(</big><em>contacts=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#line.LineClient.createRoomWithContacts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a chat room with contacts</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineClient.createRoomWithIds">
+<tt class="descname">createRoomWithIds</tt><big>(</big><em>ids=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#line.LineClient.createRoomWithIds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a chat room with contact ids</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineClient.getContactById">
+<tt class="descname">getContactById</tt><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#line.LineClient.getContactById" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a contact by id</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; name of a contact</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineClient.getContactByName">
+<tt class="descname">getContactByName</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#line.LineClient.getContactByName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a contact by name</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of a contact</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineClient.getGroupById">
+<tt class="descname">getGroupById</tt><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#line.LineClient.getGroupById" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a group by id</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; id of a group</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineClient.getGroupByName">
+<tt class="descname">getGroupByName</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#line.LineClient.getGroupByName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a group by name</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of a group</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineClient.getLineMessageFromMessage">
+<tt class="descname">getLineMessageFromMessage</tt><big>(</big><em>messages=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#line.LineClient.getLineMessageFromMessage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change Message objects to LineMessage objects</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>messges</strong> &#8211; list of Message object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineClient.getMessageBox">
+<tt class="descname">getMessageBox</tt><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#line.LineClient.getMessageBox" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get MessageBox by id</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; <cite>contact</cite> id or <cite>group</cite> id or <cite>room</cite> id</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineClient.getProfile">
+<tt class="descname">getProfile</tt><big>(</big><big>)</big><a class="headerlink" href="#line.LineClient.getProfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get profile of LINE account</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineClient.getRecentMessages">
+<tt class="descname">getRecentMessages</tt><big>(</big><em>messageBox</em>, <em>count</em><big>)</big><a class="headerlink" href="#line.LineClient.getRecentMessages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get recent message from MessageBox</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>messageBox</strong> &#8211; MessageBox object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineClient.getRoomById">
+<tt class="descname">getRoomById</tt><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#line.LineClient.getRoomById" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a room by id</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; id of a room</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineClient.inviteIntoGroup">
+<tt class="descname">inviteIntoGroup</tt><big>(</big><em>group</em>, <em>contacts=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#line.LineClient.inviteIntoGroup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invite contacts into group</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>group</strong> &#8211; LineGroup instance</li>
+<li><strong>contacts</strong> &#8211; LineContact instances to invite</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineClient.inviteIntoRoom">
+<tt class="descname">inviteIntoRoom</tt><big>(</big><em>room</em>, <em>contacts=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#line.LineClient.inviteIntoRoom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invite contacts into room</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>room</strong> &#8211; LineRoom instance</li>
+<li><strong>contacts</strong> &#8211; LineContact instances to invite</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineClient.leaveGroup">
+<tt class="descname">leaveGroup</tt><big>(</big><em>group</em><big>)</big><a class="headerlink" href="#line.LineClient.leaveGroup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Leave a group</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>group</strong> &#8211; LineGroup instance to leave</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineClient.leaveRoom">
+<tt class="descname">leaveRoom</tt><big>(</big><em>room</em><big>)</big><a class="headerlink" href="#line.LineClient.leaveRoom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Leave a room</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>room</strong> &#8211; LineRoom instance to leave</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineClient.refreshActiveRooms">
+<tt class="descname">refreshActiveRooms</tt><big>(</big><big>)</big><a class="headerlink" href="#line.LineClient.refreshActiveRooms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Refresh active chat rooms</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineClient.refreshContacts">
+<tt class="descname">refreshContacts</tt><big>(</big><big>)</big><a class="headerlink" href="#line.LineClient.refreshContacts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Refresh contacts of LineClient</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineClient.refreshGroups">
+<tt class="descname">refreshGroups</tt><big>(</big><big>)</big><a class="headerlink" href="#line.LineClient.refreshGroups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Refresh groups of LineClient</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineClient.sendMessage">
+<tt class="descname">sendMessage</tt><big>(</big><em>message</em>, <em>seq=0</em><big>)</big><a class="headerlink" href="#line.LineClient.sendMessage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send a message</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> &#8211; LineMessage instance to send</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+    <a href="../index.html">
+        <img src="../_static/logo.png" width="200px"/>
+    </a>
+
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">LineClient</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#id1">LineClient</a></li>
+</ul>
+</li>
+</ul>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../tutorial.html" title="previous chapter">LINE Episode I: A New Hope</a></li>
+      <li>Next: <a href="models.html" title="next chapter">Models</a></li>
+  </ul></li>
+</ul>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/client.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+  <h3>Useful links:</h3>
+  <ul>
+    <li><a href="https://github.com/carpedm20/line">Github Repo</a></li>
+    <li><a href="https://github.com/carpedm20/line/issues">Issue Tracker</a></li>
+  </ul>
+  <p><b>Package:</b></p>
+  <ul>
+    <li>
+        <a href="http://badge.fury.io/py/line">
+            <img src="https://badge.fury.io/py/line.png"/>
+        </a>
+    </li>
+    <li>
+        <a href="https://crate.io/packages/line/">
+            <img src="https://pypip.in/d/line/badge.png"/>
+        </a>
+    </li>
+  </ul>
+  <p><b>Github:</b></p>
+  <ul>
+    <li>
+        <iframe 
+            src="http://ghbtns.com/github-btn.html?user=carpedm20&repo=line&type=watch&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20">
+        </iframe>
+    </li>
+    <li>
+        <iframe 
+            src="http://ghbtns.com/github-btn.html?user=carpedm20&repo=line&type=fork&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20">
+        </iframe>
+    </li>
+    <li>
+        <iframe 
+            src="http://ghbtns.com/github-btn.html?user=carpedm20&repo=line&type=follow&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="140" height="20">
+        </iframe>
+    </li>
+  </ul>
+  
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="footer">
+    &copy; Copyright 2014, Kim Tae Hoon.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  
+  </body>
+</html>

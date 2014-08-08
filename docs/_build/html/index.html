@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>LINE manual &mdash; LINE api doc 0.1.5 documentation</title>
+    
+    <link rel="stylesheet" href="_static/flasky.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/logo.ico"/>
+    <link rel="top" title="LINE api doc 0.1.5 documentation" href="#" />
+    <link rel="next" title="LINE Episode I: A New Hope" href="tutorial.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body>
+  
+  
+  <div class=indexwrapper>
+  
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="tutorial.html" title="LINE Episode I: A New Hope"
+             accesskey="N">next</a> |</li>
+        <li><a href="#">LINE api doc 0.1.5 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="line-manual">
+<h1>LINE manual<a class="headerlink" href="#line-manual" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p><em>line</em> is a python library that alow you to send and receive a LINE message.
+With <em>line</em> you can use LINE on any systems like Ubuntu or make your owb
+LINE bot which will automatically reply for your message!</p>
+<p>Enjoy <em>line</em> and <em>May the LINE be with you...</em></p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This library is under developement so name of variables, methods or functions
+can be change without any notification. So, read the documentaion carefully.</p>
+</div>
+</div>
+<div class="section" id="key-features">
+<h2>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>login to LINE server</li>
+<li>get a list of <cite>contact</cite>, <cite>group</cite> or chat <cite>room</cite></li>
+<li>send and receive a <cite>message</cite> or <cite>sticker</cite></li>
+<li>invite, join or leave a <cite>group</cite> or <cite>room</cite></li>
+<li><cite>longPoll</cite> method which will allow you to make a LINE bot easily</li>
+</ul>
+</div>
+<div class="section" id="todo">
+<h2>Todo<a class="headerlink" href="#todo" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Sending a Image</li>
+<li>More usable methods and objects</li>
+</ul>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>First, you need to install <strong>Apache Thrift</strong>. Install instructions are <a class="reference external" href="http://thrift.apache.org/docs/install/">here</a>. (This might take some time...)</p>
+<p>Next:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span class="nv">$ </span>pip install line
+</pre></div>
+</div>
+<p>Or, you can use:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span class="nv">$ </span>easy_install line
+</pre></div>
+</div>
+<p>Or, you can also install manually:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span class="nv">$ </span>git clone git://github.com/carpedm20/line.git
+<span class="nv">$ </span><span class="nb">cd </span>LINE
+<span class="nv">$ </span>python setup.py install
+</pre></div>
+</div>
+</div>
+<div class="section" id="api-documentation">
+<h2>API Documentation<a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">LINE Episode I: A New Hope</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#part-1-login-and-pin-authentication">Part 1: Login and Pin authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#part-2-profile-and-contacts">Part 2: Profile and Contacts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#part-3-rooms-and-groups">Part 3: Rooms and Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#part-4-make-your-own-bot">Part 4: Make your own bot</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/client.html">LineClient</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/client.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/client.html#id1">LineClient</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/models.html">Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/models.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/models.html#linemessage">LineMessage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/models.html#linebase">LineBase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/models.html#linecontct">LineContct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/models.html#lineroom">LineRoom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/models.html#linegroup">LineGroup</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/api.html">LineAPI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/api.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/api.html#id1">LineAPI</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="py-modindex.html"><em>Module Index</em></a></li>
+<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
+</ul>
+</div>
+<div class="section" id="echo-bot-example">
+<h2>Echo bot example<a class="headerlink" href="#echo-bot-example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">line</span> <span class="kn">import</span> <span class="n">LineClient</span><span class="p">,</span> <span class="n">LineGroup</span><span class="p">,</span> <span class="n">LineContact</span>
+
+<span class="k">try</span><span class="p">:</span>
+   <span class="n">client</span> <span class="o">=</span> <span class="n">LineClient</span><span class="p">(</span><span class="s">&quot;ID&quot;</span><span class="p">,</span> <span class="s">&quot;PASSWORD&quot;</span><span class="p">)</span>
+   <span class="c">#client = LineClient(authToken=&quot;AUTHTOKEN&quot;)</span>
+<span class="k">except</span><span class="p">:</span>
+   <span class="k">print</span> <span class="s">&quot;Login Failed&quot;</span>
+
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+   <span class="n">op_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+   <span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="n">client</span><span class="o">.</span><span class="n">longPoll</span><span class="p">():</span>
+      <span class="n">op_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">op</span><span class="p">)</span>
+
+   <span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="n">op_list</span><span class="p">:</span>
+      <span class="n">sender</span>  <span class="o">=</span> <span class="n">op</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+      <span class="n">message</span> <span class="o">=</span> <span class="n">op</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+      <span class="n">msg</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span>
+      <span class="n">sender</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p>Source codes are distributed under BSD license.</p>
+</div>
+<div class="section" id="author">
+<h2>Author<a class="headerlink" href="#author" title="Permalink to this headline">¶</a></h2>
+<p>Taehoon Kim / <a class="reference external" href="http://carpedm20.github.io/about/">&#64;carpedm20</a></p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+    <a href="#">
+        <img src="_static/logo.png" width="200px"/>
+    </a>
+
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">LINE manual</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#key-features">Key Features</a></li>
+<li><a class="reference internal" href="#todo">Todo</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#api-documentation">API Documentation</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+<li><a class="reference internal" href="#echo-bot-example">Echo bot example</a></li>
+<li><a class="reference internal" href="#license">License</a></li>
+<li><a class="reference internal" href="#author">Author</a></li>
+</ul>
+</li>
+</ul>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="tutorial.html" title="next chapter">LINE Episode I: A New Hope</a></li>
+  </ul></li>
+</ul>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+  <h3>Useful links:</h3>
+  <ul>
+    <li><a href="https://github.com/carpedm20/line">Github Repo</a></li>
+    <li><a href="https://github.com/carpedm20/line/issues">Issue Tracker</a></li>
+  </ul>
+  <p><b>Package:</b></p>
+  <ul>
+    <li>
+        <a href="http://badge.fury.io/py/line">
+            <img src="https://badge.fury.io/py/line.png"/>
+        </a>
+    </li>
+    <li>
+        <a href="https://crate.io/packages/line/">
+            <img src="https://pypip.in/d/line/badge.png"/>
+        </a>
+    </li>
+  </ul>
+  <p><b>Github:</b></p>
+  <ul>
+    <li>
+        <iframe 
+            src="http://ghbtns.com/github-btn.html?user=carpedm20&repo=line&type=watch&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20">
+        </iframe>
+    </li>
+    <li>
+        <iframe 
+            src="http://ghbtns.com/github-btn.html?user=carpedm20&repo=line&type=fork&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20">
+        </iframe>
+    </li>
+    <li>
+        <iframe 
+            src="http://ghbtns.com/github-btn.html?user=carpedm20&repo=line&type=follow&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="140" height="20">
+        </iframe>
+    </li>
+  </ul>
+  
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="footer">
+    &copy; Copyright 2014, Kim Tae Hoon.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  
+  </div>
+  
+  </body>
+</html>
