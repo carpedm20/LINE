@@ -4,9 +4,11 @@ LINE
 [![PyPi version](https://pypip.in/v/line/badge.png)](https://crate.io/packages/line/)
 [![PyPi downloads](https://pypip.in/d/line/badge.png)](https://crate.io/packages/line/)
 
-*May the LINE be with you...*
+**2014.08.08** Announcement: some codes are removed because of the request of LINE corporation
 
 The documentation is available at [here](http://carpedm20.github.io/line/)
+
+*May the LINE be with you...*
 
 
 Screenshot
