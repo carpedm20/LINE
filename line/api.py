@@ -56,6 +56,13 @@ class LineAPI(object):
         """
         raise Exception("Code is removed because of the request of LINE corporation")
 
+    def tokenLogin(self):
+        self.transport = THttpClient.THttpClient(self.LINE_HTTP_URL)
+        self.transport.setCustomHeaders(self._headers)
+
+        self.protocol = TCompactProtocol.TCompactProtocol(self.transport)
+        self._client   = CurveThrift.Client(self.protocol)
+        
     def login(self):
         """Login to LINE server."""
         if self.provider == CurveThrift.Provider.LINE: # LINE
