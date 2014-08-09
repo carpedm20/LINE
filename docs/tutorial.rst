@@ -21,6 +21,10 @@ Let's start with login to LINE and pass through a pin authentication.
    >>> client = LineClient("carpedm20", "xxxxxxxxxx")
    Enter PinCode '9779' to your mobile phone in 2 minutes
 
+.. warning::
+
+   You will failed to login becuase of the request of LINE corporation. (I have to remove some codes) However, you can use this library by login with `authToken`. The instruction about `authToken` login is explained in bellow paragraphs.
+
 As you can see, you can login by making a `LineClient` instance and pass your
 email and password as parameters. If you have a NAVER account and link it to 
 LINE account, you can login with your NAVER account! 
