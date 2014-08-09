@@ -1,7 +1,7 @@
 LINE
 ----
 
-[![PyPi version](https://pypip.in/v/line/badge.png)](https://pypi.python.org/pypi/line)
+[![PyPi version](https://badge.fury.io/py/line.png)](https://pypi.python.org/pypi/line)
 [![PyPi downloads](https://pypip.in/d/line/badge.png)](https://pypi.python.org/pypi/line)
 
 **2014.08.08** Announcement: some codes are removed because of the request of LINE corporation. You can use library only with `authToken` login.
