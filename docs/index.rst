@@ -77,7 +77,6 @@ API Documentation
 Indices and tables
 ------------------
 
-* :ref:`modindex`
 * :ref:`search`
 
 
