@@ -65,7 +65,7 @@ class LineClient(LineAPI):
             self.authToken = self._headers['X-Line-Access'] = authToken
 
             self.tokenLogin()
-            self.ready()
+            #self.ready()
         else:
             if EMAIL_REGEX.match(id):
                 self.provider = Provider.LINE # LINE

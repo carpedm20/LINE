@@ -95,20 +95,7 @@ class LineAPI(object):
         print "Enter PinCode '%s' to your mobile phone in 2 minutes"\
                 % self._pinCode
 
-        j = self._get_json(self.LINE_CERTIFICATE_URL)
-        self.verifier = j['result']['verifier']
-
-        msg = self._client.loginWithVerifierForCertificate(self.verifier)
-
-        if msg.type == 1:
-            self.certificate = msg.certificate
-            self.authToken = self._headers['X-Line-Access'] = msg.authToken
-        elif msg.type == 2:
-            msg = "require QR code"
-            self.raise_error(msg)
-        else:
-            msg = "require device confirm"
-            self.raise_error(msg)
+        raise Exception("Code is removed because of the request of LINE corporation")
 
     def _getProfile(self):
         """Get profile information
