@@ -199,7 +199,8 @@ is a basic structure of a LINE bot:</p>
 17
 18
 19
-20</pre></div></td><td class="code"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">line</span> <span class="kn">import</span> <span class="n">LineClient</span><span class="p">,</span> <span class="n">LineGroup</span><span class="p">,</span> <span class="n">LineContact</span>
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">line</span> <span class="kn">import</span> <span class="n">LineClient</span><span class="p">,</span> <span class="n">LineGroup</span><span class="p">,</span> <span class="n">LineContact</span>
 
 <span class="k">try</span><span class="p">:</span>
    <span class="n">client</span> <span class="o">=</span> <span class="n">LineClient</span><span class="p">(</span><span class="s">&quot;ID&quot;</span><span class="p">,</span> <span class="s">&quot;PASSWORD&quot;</span><span class="p">)</span>
@@ -214,11 +215,12 @@ is a basic structure of a LINE bot:</p>
 </span>      <span class="n">op_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">op</span><span class="p">)</span>
 
    <span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="n">op_list</span><span class="p">:</span>
-      <span class="n">message</span> <span class="o">=</span> <span class="n">op</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-      <span class="n">sender</span>  <span class="o">=</span> <span class="n">op</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+      <span class="n">sender</span>   <span class="o">=</span> <span class="n">op</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+      <span class="n">receiver</span> <span class="o">=</span> <span class="n">op</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+      <span class="n">message</span>  <span class="o">=</span> <span class="n">op</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 
       <span class="n">msg</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span>
-      <span class="n">sender</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+      <span class="n">receiver</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s">&quot;[</span><span class="si">%s</span><span class="s">] </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">sender</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">msg</span><span class="p">))</span>
 </pre></div>
 </td></tr></table></div>
 <p>One of the most important line is #12, and you might notice there is a new
@@ -227,8 +229,9 @@ be handled by our LINE bot. There are various type of operations, but
 our interest might be <cite>RECEIVE_MESSAGE</cite> operation. This operation contain a new
 message sent by other <cite>contact</cite>, <cite>room</cite> or <cite>group</cite>. So we can get a received
 <cite>message</cite> and its <cite>sender</cite> by</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">message</span> <span class="o">=</span> <span class="n">op</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">sender</span>  <span class="o">=</span> <span class="n">op</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sender</span>   <span class="o">=</span> <span class="n">op</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">receiver</span> <span class="o">=</span> <span class="n">op</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">message</span>  <span class="o">=</span> <span class="n">op</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -274,12 +277,12 @@ message sent by other <cite>contact</cite>, <cite>room</cite> or <cite>group</ci
   <p><b>Package:</b></p>
   <ul>
     <li>
-        <a href="http://badge.fury.io/py/line">
+      <a href="https://pypi.python.org/pypi/line/">
             <img src="https://badge.fury.io/py/line.png"/>
         </a>
     </li>
     <li>
-        <a href="https://crate.io/packages/line/">
+      <a href="https://pypi.python.org/pypi/line/">
             <img src="https://pypip.in/d/line/badge.png"/>
         </a>
     </li>

@@ -139,7 +139,6 @@ LINE bot which will automatically reply for your message!</p>
 <div class="section" id="indices-and-tables">
 <h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference internal" href="py-modindex.html"><em>Module Index</em></a></li>
 <li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
 </ul>
 </div>
@@ -160,11 +159,12 @@ LINE bot which will automatically reply for your message!</p>
       <span class="n">op_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">op</span><span class="p">)</span>
 
    <span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="n">op_list</span><span class="p">:</span>
-      <span class="n">sender</span>  <span class="o">=</span> <span class="n">op</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-      <span class="n">message</span> <span class="o">=</span> <span class="n">op</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+      <span class="n">sender</span>   <span class="o">=</span> <span class="n">op</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+      <span class="n">receiver</span> <span class="o">=</span> <span class="n">op</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+      <span class="n">message</span>  <span class="o">=</span> <span class="n">op</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 
       <span class="n">msg</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span>
-      <span class="n">sender</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+      <span class="n">receiver</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s">&quot;[</span><span class="si">%s</span><span class="s">] </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">sender</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">msg</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -222,12 +222,12 @@ LINE bot which will automatically reply for your message!</p>
   <p><b>Package:</b></p>
   <ul>
     <li>
-        <a href="http://badge.fury.io/py/line">
+      <a href="https://pypi.python.org/pypi/line/">
             <img src="https://badge.fury.io/py/line.png"/>
         </a>
     </li>
     <li>
-        <a href="https://crate.io/packages/line/">
+      <a href="https://pypi.python.org/pypi/line/">
             <img src="https://pypip.in/d/line/badge.png"/>
         </a>
     </li>

@@ -393,17 +393,22 @@ class LineClient(LineAPI):
                     pass
                 elif operation.type == OT.RECEIVE_MESSAGE:
                     message    = LineMessage(self, operation.message)
-                    raw_sender = operation.message._from
-                    sender     = self.getContactOrRoomOrGroupById(raw_sender)
 
-                    if sender is None:
+                    raw_sender   = operation.message._from
+                    raw_receiver = operation.message.to
+
+                    sender   = self.getContactOrRoomOrGroupById(raw_sender)
+                    receiver = self.getContactOrRoomOrGroupById(raw_receiver)
+
+                    if sender is None or receiver is None:
                         self.refreshGroups()
                         self.refreshContacts()
                         self.refreshActiveRooms()
 
-                        sender = self.getContactOrRoomOrGroupById(raw_sender)
+                        sender   = self.getContactOrRoomOrGroupById(raw_sender)
+                        receiver = self.getContactOrRoomOrGroupById(raw_receiver)
 
-                    yield (sender, message)
+                    yield (sender, receiver, message)
                 else:
                     print "[*] %s" % OT._VALUES_TO_NAMES[operation.type]
                     print operation

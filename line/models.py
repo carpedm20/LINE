@@ -183,6 +183,7 @@ class LineGroup(LineBase):
         :param is_joined: is a user joined or invited to a group
         """
 
+        self._client = client
         self._group  = group
 
         self.id      = group.id

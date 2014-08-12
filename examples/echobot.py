@@ -13,9 +13,10 @@ while True:
         op_list.append(op)
 
     for op in op_list:
-        message = op[1]
-        sender  = op[0]
+        sender   = op[0]
+        receiver = op[1]
+        message  = op[2]
         
         msg = message.text
-        sender.sendMessage(msg)
+        receiver.sendMessage("[%s] %s" % (sender.name, msg))
 

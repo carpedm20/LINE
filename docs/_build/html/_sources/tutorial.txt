@@ -180,11 +180,12 @@ is a basic structure of a LINE bot:
          op_list.append(op)
 
       for op in op_list:
-         message = op[1]
-         sender  = op[0]
+         sender   = op[0]
+         receiver = op[1]
+         message  = op[2]
 
          msg = message.text
-         sender.sendMessage(msg)
+         receiver.sendMessage("[%s] %s" % (sender.name, msg))
 
 One of the most important line is #12, and you might notice there is a new
 method named `longPoll`. This method pull a list of operations which should
@@ -195,5 +196,6 @@ message sent by other `contact`, `room` or `group`. So we can get a received
 
 .. code-block:: python
 
-   message = op[1]
-   sender  = op[0]
+   sender   = op[0]
+   receiver = op[1]
+   message  = op[2]
