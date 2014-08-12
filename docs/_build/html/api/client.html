@@ -176,12 +176,12 @@ everytime when you create a new <cite>LineClient</cite> instance.</p>
 <dl class="method">
 <dt id="line.LineClient.getContactById">
 <tt class="descname">getContactById</tt><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#line.LineClient.getContactById" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a contact by id</p>
+<dd><p>Get a <cite>contact</cite> by id</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; name of a contact</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; id of a <cite>contact</cite></td>
 </tr>
 </tbody>
 </table>
@@ -190,12 +190,26 @@ everytime when you create a new <cite>LineClient</cite> instance.</p>
 <dl class="method">
 <dt id="line.LineClient.getContactByName">
 <tt class="descname">getContactByName</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#line.LineClient.getContactByName" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a contact by name</p>
+<dd><p>Get a <cite>contact</cite> by name</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of a contact</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of a <cite>contact</cite></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineClient.getContactOrRoomOrGroupById">
+<tt class="descname">getContactOrRoomOrGroupById</tt><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#line.LineClient.getContactOrRoomOrGroupById" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a <cite>contact</cite> or <cite>room</cite> or <cite>group</cite> by its id</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; id of a instance</td>
 </tr>
 </tbody>
 </table>
@@ -260,7 +274,7 @@ everytime when you create a new <cite>LineClient</cite> instance.</p>
 <dl class="method">
 <dt id="line.LineClient.getProfile">
 <tt class="descname">getProfile</tt><big>(</big><big>)</big><a class="headerlink" href="#line.LineClient.getProfile" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get profile of LINE account</p>
+<dd><p>Get <cite>profile</cite> of LINE account</p>
 </dd></dl>
 
 <dl class="method">
@@ -353,6 +367,30 @@ everytime when you create a new <cite>LineClient</cite> instance.</p>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineClient.longPoll">
+<tt class="descname">longPoll</tt><big>(</big><em>count=50</em><big>)</big><a class="headerlink" href="#line.LineClient.longPoll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receive a list of operations that have to be processed by original
+Line cleint.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>count</strong> &#8211; number of operations to get from</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">a generator which returns operations</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="n">client</span><span class="o">.</span><span class="n">longPoll</span><span class="p">():</span>
+<span class="go">        sender   = op[0]</span>
+<span class="go">        receiver = op[1]</span>
+<span class="go">        message  = op[2]</span>
+<span class="go">        print &quot;%s-&gt;%s : %s&quot; % (sender, receiver, message)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">

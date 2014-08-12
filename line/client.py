@@ -86,7 +86,7 @@ class LineClient(LineAPI):
         self.refreshActiveRooms()
 
     def getProfile(self):
-        """Get profile of LINE account"""
+        """Get `profile` of LINE account"""
         if self._check_auth():
             self.profile = LineContact(self, self._getProfile())
 
@@ -95,9 +95,9 @@ class LineClient(LineAPI):
         return None
 
     def getContactByName(self, name):
-        """Get a contact by name
+        """Get a `contact` by name
         
-        :param name: name of a contact
+        :param name: name of a `contact`
         """
         for contact in self.contacts:
             if name == contact.name:
@@ -106,9 +106,9 @@ class LineClient(LineAPI):
         return None
 
     def getContactById(self, id):
-        """Get a contact by id
+        """Get a `contact` by id
         
-        :param id: name of a contact
+        :param id: id of a `contact`
         """
         for contact in self.contacts:
             if contact.id == id:
@@ -117,6 +117,10 @@ class LineClient(LineAPI):
         return None
 
     def getContactOrRoomOrGroupById(self, id):
+        """Get a `contact` or `room` or `group` by its id
+
+        :param id: id of a instance
+        """
         return self.getContactById(id)\
                 or self.getRoomById(id)\
                 or self.getGroupById(id)
@@ -372,6 +376,18 @@ class LineClient(LineAPI):
             return self.getLineMessageFromMessage(messages)
 
     def longPoll(self, count=50):
+        """Receive a list of operations that have to be processed by original
+        Line cleint.
+
+        :param count: number of operations to get from 
+        :returns: a generator which returns operations
+
+        >>> for op in client.longPoll():
+                sender   = op[0]
+                receiver = op[1]
+                message  = op[2]
+                print "%s->%s : %s" % (sender, receiver, message)
+        """
         if self._check_auth():
             """Check is there any operations from LINE server"""
             OT = OperationType

@@ -2,7 +2,8 @@ LINE
 ----
 
 **2014.08.08** Announcement: some codes are removed because of the
-request of LINE corporation
+request of LINE corporation. You can use library only with ``authToken``
+login.
 
 The documentation is available at
 `here <http://carpedm20.github.io/line/>`_
@@ -21,5 +22,5 @@ Author
 
 Taehoon Kim / `@carpedm20 <http://carpedm20.github.io/about/>`_
 
-.. |PyPi version| image:: https://pypip.in/v/line/badge.png
+.. |PyPi version| image:: https://badge.fury.io/py/line.png
 .. |PyPi downloads| image:: https://pypip.in/d/line/badge.png
