@@ -73,6 +73,7 @@ API Documentation
    api/models
    api/api
 
+   issue
 
 Indices and tables
 ------------------

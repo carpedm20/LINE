@@ -61,7 +61,7 @@ class LineAPI(object):
         self.transport.setCustomHeaders(self._headers)
 
         self.protocol = TCompactProtocol.TCompactProtocol(self.transport)
-        self._client   = CurveThrift.Client(self.protocol)
+        self._client  = CurveThrift.Client(self.protocol)
         
     def login(self):
         """Login to LINE server."""
