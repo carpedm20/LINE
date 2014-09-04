@@ -86,7 +86,7 @@ class LineAPI(object):
         self._client   = CurveThrift.Client(self.protocol)
 
         msg = self._client.loginWithIdentityCredentialForCertificate(
-                self.id, self.password, keyname, crypto, False, self.ip,
+                self.id, self.password, keyname, crypto, True, self.ip,
                 self.com_name, self.provider, "")
 
         self._headers['X-Line-Access'] = msg.verifier
