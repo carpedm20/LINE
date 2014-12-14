@@ -8,7 +8,8 @@ LINE
 
 **2014.08.08** Announcement: some codes are removed because of the request of LINE corporation. You can use library only with `authToken` login.
 
-The documentation is available at [here](http://carpedm20.github.io/line/)
+- Documentation : [http://carpedm20.github.io/line/](http://carpedm20.github.io/line/)
+- Developer Mailing List: [Google Group](https://groups.google.com/forum/#!forum/line-python-developer)
 
 *May the LINE be with you...*
 
