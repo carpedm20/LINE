@@ -245,7 +245,7 @@ class LineClient(LineAPI):
         """
         if self._check_auth():
             contact_ids = [contact.id for contact in contacts]
-            self._inviteIntoGroup(room.id, contact_ids)
+            self._inviteIntoGroup(group.id, contact_ids)
 
     def acceptGroupInvitation(self, group):
         """Accept a group invitation
