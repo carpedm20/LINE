@@ -6,7 +6,7 @@ LINE manual
 Introduction
 ------------
 
-*line* is a python library that alow you to send and receive a LINE message.
+*line* is a python library that allow you to send and receive a LINE message.
 With *line* you can use LINE on any systems like Ubuntu or make your owb 
 LINE bot which will automatically reply for your message!
 
