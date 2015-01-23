@@ -113,6 +113,9 @@ class LineClient(LineAPI):
         for contact in self.contacts:
             if contact.id == id:
                 return contact
+        if self.profile:
+            if self.profile.id == id:
+                return self.profile
 
         return None
 
