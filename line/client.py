@@ -419,6 +419,13 @@ class LineClient(LineAPI):
                     sender   = self.getContactOrRoomOrGroupById(raw_sender)
                     receiver = self.getContactOrRoomOrGroupById(raw_receiver)
 
+                    # If sender is not found, check member list of group chat sent to
+                    if sender is None and type(receiver) is LineGroup:
+                        for m in receiver.members:
+                            if m.id == raw_sender:
+                                sender = m
+                                break
+
                     if sender is None or receiver is None:
                         self.refreshGroups()
                         self.refreshContacts()
