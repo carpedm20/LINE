@@ -147,8 +147,8 @@ If you have too much groups and want to find a specific group with its `name`:
 
 .. code-block:: python
 
-   >>> group = client.getGroupFromName('GROUP_NAME')
-   >>> contact = client.getContactFromName('CONTACT_NAME')
+   >>> group = client.getGroupByName('GROUP_NAME')
+   >>> contact = client.getContactByName('CONTACT_NAME')
 
 There are other methods in `contact`, `rooms` and `group` instances so I'll
 recommend you to take a look at the :ref:`models <api/models>` section.
