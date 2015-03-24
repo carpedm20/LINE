@@ -97,6 +97,10 @@ class LineAPI(object):
 
         raise Exception("Code is removed because of the request of LINE corporation")
 
+    def get_json(self, url):
+        """Get josn from given url with saved session and headers"""
+        return json.loads(self._session.get(url, headers=self._headers).text)
+
     def _getProfile(self):
         """Get profile information
 
