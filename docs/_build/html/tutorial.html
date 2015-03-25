@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>LINE Episode I: A New Hope &mdash; LINE api doc 0.1.5 documentation</title>
+    <title>LINE Episode I: A New Hope &mdash; LINE api doc 0.3.0 documentation</title>
     
     <link rel="stylesheet" href="_static/flasky.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.1.5',
+        VERSION:     '0.3.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/logo.ico"/>
-    <link rel="top" title="LINE api doc 0.1.5 documentation" href="index.html" />
+    <link rel="top" title="LINE api doc 0.3.0 documentation" href="index.html" />
     <link rel="next" title="LineClient" href="api/client.html" />
     <link rel="prev" title="LINE manual" href="index.html" />
    
@@ -32,11 +32,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
 
   </head>
-  <body>
+  <body role="document">
   
   
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -48,14 +48,14 @@
         <li class="right" >
           <a href="index.html" title="LINE manual"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">LINE api doc 0.1.5 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">LINE api doc 0.3.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="line-episode-i-a-new-hope">
 <h1>LINE Episode I: A New Hope<a class="headerlink" href="#line-episode-i-a-new-hope" title="Permalink to this headline">¶</a></h1>
@@ -76,7 +76,7 @@ do other things with <em>line</em></p>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">You will failed to login becuase of the request of LINE corporation. (I have to remove some codes) However, you can use this library by login with <cite>authToken</cite>. The instruction about <cite>authToken</cite> login is explained in bellow paragraphs.</p>
+<p class="last">You will failed to login because of the request of LINE corporation. (I have to remove some codes) However, you can use this library by login with <cite>authToken</cite>. The instruction about <cite>authToken</cite> login is explained in bellow paragraphs.</p>
 </div>
 <p>As you can see, you can login by making a <cite>LineClient</cite> instance and pass your
 email and password as parameters. If you have a NAVER account and link it to
@@ -173,7 +173,7 @@ list of recent messages, use <cite>getRecentMessages</cite> method:</p>
 </pre></div>
 </div>
 <p>There are other methods in <cite>contact</cite>, <cite>rooms</cite> and <cite>group</cite> instances so I&#8217;ll
-recommend you to take a look at the <em class="xref std std-ref">models</em> section.</p>
+recommend you to take a look at the <span class="xref std std-ref">models</span> section.</p>
 </div>
 <div class="section" id="part-4-make-your-own-bot">
 <h2>Part 4: Make your own bot<a class="headerlink" href="#part-4-make-your-own-bot" title="Permalink to this headline">¶</a></h2>
@@ -241,7 +241,7 @@ message sent by other <cite>contact</cite>, <cite>room</cite> or <cite>group</ci
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
     <a href="index.html">
         <img src="_static/logo.png" width="200px"/>
@@ -264,11 +264,13 @@ message sent by other <cite>contact</cite>, <cite>room</cite> or <cite>group</ci
       <li>Next: <a href="api/client.html" title="next chapter">LineClient</a></li>
   </ul></li>
 </ul>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/tutorial.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/tutorial.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
   <h3>Useful links:</h3>
   <ul>
     <li><a href="https://github.com/carpedm20/line">Github Repo</a></li>
@@ -319,7 +321,7 @@ message sent by other <cite>contact</cite>, <cite>room</cite> or <cite>group</ci
     </li>
   </ul>
   
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />

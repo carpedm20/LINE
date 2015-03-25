@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>LineClient &mdash; LINE api doc 0.1.5 documentation</title>
+    <title>LineClient &mdash; LINE api doc 0.3.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/flasky.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.1.5',
+        VERSION:     '0.3.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/logo.ico"/>
-    <link rel="top" title="LINE api doc 0.1.5 documentation" href="../index.html" />
+    <link rel="top" title="LINE api doc 0.3.0 documentation" href="../index.html" />
     <link rel="next" title="Models" href="models.html" />
     <link rel="prev" title="LINE Episode I: A New Hope" href="../tutorial.html" />
    
@@ -32,11 +32,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
 
   </head>
-  <body>
+  <body role="document">
   
   
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -48,14 +48,14 @@
         <li class="right" >
           <a href="../tutorial.html" title="LINE Episode I: A New Hope"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">LINE api doc 0.1.5 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">LINE api doc 0.3.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="lineclient">
 <h1>LineClient<a class="headerlink" href="#lineclient" title="Permalink to this headline">¶</a></h1>
@@ -82,7 +82,7 @@ everytime when you create a new <cite>LineClient</cite> instance.</p>
 <h2>LineClient<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="line.LineClient">
-<em class="property">class </em><tt class="descclassname">line.</tt><tt class="descname">LineClient</tt><big>(</big><em>id=None</em>, <em>password=None</em>, <em>authToken=None</em>, <em>is_mac=True</em>, <em>com_name='carpedm20'</em><big>)</big><a class="headerlink" href="#line.LineClient" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">line.</code><code class="descname">LineClient</code><span class="sig-paren">(</span><em>id=None</em>, <em>password=None</em>, <em>authToken=None</em>, <em>is_mac=True</em>, <em>com_name='carpedm20'</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineClient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Provide a way to communicate with LINE server.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -107,7 +107,7 @@ everytime when you create a new <cite>LineClient</cite> instance.</p>
 </div>
 <dl class="method">
 <dt id="line.LineClient.acceptGroupInvitation">
-<tt class="descname">acceptGroupInvitation</tt><big>(</big><em>group</em><big>)</big><a class="headerlink" href="#line.LineClient.acceptGroupInvitation" title="Permalink to this definition">¶</a></dt>
+<code class="descname">acceptGroupInvitation</code><span class="sig-paren">(</span><em>group</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineClient.acceptGroupInvitation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accept a group invitation</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -121,13 +121,13 @@ everytime when you create a new <cite>LineClient</cite> instance.</p>
 
 <dl class="method">
 <dt id="line.LineClient.addGroupsWithIds">
-<tt class="descname">addGroupsWithIds</tt><big>(</big><em>group_ids</em>, <em>is_joined=True</em><big>)</big><a class="headerlink" href="#line.LineClient.addGroupsWithIds" title="Permalink to this definition">¶</a></dt>
+<code class="descname">addGroupsWithIds</code><span class="sig-paren">(</span><em>group_ids</em>, <em>is_joined=True</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineClient.addGroupsWithIds" title="Permalink to this definition">¶</a></dt>
 <dd><p>Refresh groups of LineClient</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="line.LineClient.createGroupWithContacts">
-<tt class="descname">createGroupWithContacts</tt><big>(</big><em>name</em>, <em>contacts=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#line.LineClient.createGroupWithContacts" title="Permalink to this definition">¶</a></dt>
+<code class="descname">createGroupWithContacts</code><span class="sig-paren">(</span><em>name</em>, <em>contacts=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineClient.createGroupWithContacts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a group with contacts</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -145,7 +145,7 @@ everytime when you create a new <cite>LineClient</cite> instance.</p>
 
 <dl class="method">
 <dt id="line.LineClient.createGroupWithIds">
-<tt class="descname">createGroupWithIds</tt><big>(</big><em>ids=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#line.LineClient.createGroupWithIds" title="Permalink to this definition">¶</a></dt>
+<code class="descname">createGroupWithIds</code><span class="sig-paren">(</span><em>ids=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineClient.createGroupWithIds" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a group with contact ids</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -163,19 +163,33 @@ everytime when you create a new <cite>LineClient</cite> instance.</p>
 
 <dl class="method">
 <dt id="line.LineClient.createRoomWithContacts">
-<tt class="descname">createRoomWithContacts</tt><big>(</big><em>contacts=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#line.LineClient.createRoomWithContacts" title="Permalink to this definition">¶</a></dt>
+<code class="descname">createRoomWithContacts</code><span class="sig-paren">(</span><em>contacts=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineClient.createRoomWithContacts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a chat room with contacts</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="line.LineClient.createRoomWithIds">
-<tt class="descname">createRoomWithIds</tt><big>(</big><em>ids=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#line.LineClient.createRoomWithIds" title="Permalink to this definition">¶</a></dt>
+<code class="descname">createRoomWithIds</code><span class="sig-paren">(</span><em>ids=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineClient.createRoomWithIds" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a chat room with contact ids</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="line.LineClient.findAndAddContactByUserid">
+<code class="descname">findAndAddContactByUserid</code><span class="sig-paren">(</span><em>userid</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineClient.findAndAddContactByUserid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find and add a <cite>contact</cite> by userid</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>userid</strong> &#8211; user id</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="line.LineClient.getContactById">
-<tt class="descname">getContactById</tt><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#line.LineClient.getContactById" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getContactById</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineClient.getContactById" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a <cite>contact</cite> by id</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -189,7 +203,7 @@ everytime when you create a new <cite>LineClient</cite> instance.</p>
 
 <dl class="method">
 <dt id="line.LineClient.getContactByName">
-<tt class="descname">getContactByName</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#line.LineClient.getContactByName" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getContactByName</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineClient.getContactByName" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a <cite>contact</cite> by name</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -203,7 +217,7 @@ everytime when you create a new <cite>LineClient</cite> instance.</p>
 
 <dl class="method">
 <dt id="line.LineClient.getContactOrRoomOrGroupById">
-<tt class="descname">getContactOrRoomOrGroupById</tt><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#line.LineClient.getContactOrRoomOrGroupById" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getContactOrRoomOrGroupById</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineClient.getContactOrRoomOrGroupById" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a <cite>contact</cite> or <cite>room</cite> or <cite>group</cite> by its id</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -217,7 +231,7 @@ everytime when you create a new <cite>LineClient</cite> instance.</p>
 
 <dl class="method">
 <dt id="line.LineClient.getGroupById">
-<tt class="descname">getGroupById</tt><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#line.LineClient.getGroupById" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getGroupById</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineClient.getGroupById" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a group by id</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -231,7 +245,7 @@ everytime when you create a new <cite>LineClient</cite> instance.</p>
 
 <dl class="method">
 <dt id="line.LineClient.getGroupByName">
-<tt class="descname">getGroupByName</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#line.LineClient.getGroupByName" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getGroupByName</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineClient.getGroupByName" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a group by name</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -245,7 +259,7 @@ everytime when you create a new <cite>LineClient</cite> instance.</p>
 
 <dl class="method">
 <dt id="line.LineClient.getLineMessageFromMessage">
-<tt class="descname">getLineMessageFromMessage</tt><big>(</big><em>messages=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#line.LineClient.getLineMessageFromMessage" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getLineMessageFromMessage</code><span class="sig-paren">(</span><em>messages=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineClient.getLineMessageFromMessage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Change Message objects to LineMessage objects</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -259,7 +273,7 @@ everytime when you create a new <cite>LineClient</cite> instance.</p>
 
 <dl class="method">
 <dt id="line.LineClient.getMessageBox">
-<tt class="descname">getMessageBox</tt><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#line.LineClient.getMessageBox" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getMessageBox</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineClient.getMessageBox" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get MessageBox by id</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -273,13 +287,13 @@ everytime when you create a new <cite>LineClient</cite> instance.</p>
 
 <dl class="method">
 <dt id="line.LineClient.getProfile">
-<tt class="descname">getProfile</tt><big>(</big><big>)</big><a class="headerlink" href="#line.LineClient.getProfile" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getProfile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#line.LineClient.getProfile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get <cite>profile</cite> of LINE account</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="line.LineClient.getRecentMessages">
-<tt class="descname">getRecentMessages</tt><big>(</big><em>messageBox</em>, <em>count</em><big>)</big><a class="headerlink" href="#line.LineClient.getRecentMessages" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getRecentMessages</code><span class="sig-paren">(</span><em>messageBox</em>, <em>count</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineClient.getRecentMessages" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get recent message from MessageBox</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -293,7 +307,7 @@ everytime when you create a new <cite>LineClient</cite> instance.</p>
 
 <dl class="method">
 <dt id="line.LineClient.getRoomById">
-<tt class="descname">getRoomById</tt><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#line.LineClient.getRoomById" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getRoomById</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineClient.getRoomById" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a room by id</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -307,7 +321,7 @@ everytime when you create a new <cite>LineClient</cite> instance.</p>
 
 <dl class="method">
 <dt id="line.LineClient.inviteIntoGroup">
-<tt class="descname">inviteIntoGroup</tt><big>(</big><em>group</em>, <em>contacts=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#line.LineClient.inviteIntoGroup" title="Permalink to this definition">¶</a></dt>
+<code class="descname">inviteIntoGroup</code><span class="sig-paren">(</span><em>group</em>, <em>contacts=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineClient.inviteIntoGroup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Invite contacts into group</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -325,7 +339,7 @@ everytime when you create a new <cite>LineClient</cite> instance.</p>
 
 <dl class="method">
 <dt id="line.LineClient.inviteIntoRoom">
-<tt class="descname">inviteIntoRoom</tt><big>(</big><em>room</em>, <em>contacts=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#line.LineClient.inviteIntoRoom" title="Permalink to this definition">¶</a></dt>
+<code class="descname">inviteIntoRoom</code><span class="sig-paren">(</span><em>room</em>, <em>contacts=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineClient.inviteIntoRoom" title="Permalink to this definition">¶</a></dt>
 <dd><p>Invite contacts into room</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -343,7 +357,7 @@ everytime when you create a new <cite>LineClient</cite> instance.</p>
 
 <dl class="method">
 <dt id="line.LineClient.leaveGroup">
-<tt class="descname">leaveGroup</tt><big>(</big><em>group</em><big>)</big><a class="headerlink" href="#line.LineClient.leaveGroup" title="Permalink to this definition">¶</a></dt>
+<code class="descname">leaveGroup</code><span class="sig-paren">(</span><em>group</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineClient.leaveGroup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Leave a group</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -357,7 +371,7 @@ everytime when you create a new <cite>LineClient</cite> instance.</p>
 
 <dl class="method">
 <dt id="line.LineClient.leaveRoom">
-<tt class="descname">leaveRoom</tt><big>(</big><em>room</em><big>)</big><a class="headerlink" href="#line.LineClient.leaveRoom" title="Permalink to this definition">¶</a></dt>
+<code class="descname">leaveRoom</code><span class="sig-paren">(</span><em>room</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineClient.leaveRoom" title="Permalink to this definition">¶</a></dt>
 <dd><p>Leave a room</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -371,7 +385,7 @@ everytime when you create a new <cite>LineClient</cite> instance.</p>
 
 <dl class="method">
 <dt id="line.LineClient.longPoll">
-<tt class="descname">longPoll</tt><big>(</big><em>count=50</em><big>)</big><a class="headerlink" href="#line.LineClient.longPoll" title="Permalink to this definition">¶</a></dt>
+<code class="descname">longPoll</code><span class="sig-paren">(</span><em>count=50</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineClient.longPoll" title="Permalink to this definition">¶</a></dt>
 <dd><p>Receive a list of operations that have to be processed by original
 Line cleint.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -395,25 +409,25 @@ Line cleint.</p>
 
 <dl class="method">
 <dt id="line.LineClient.refreshActiveRooms">
-<tt class="descname">refreshActiveRooms</tt><big>(</big><big>)</big><a class="headerlink" href="#line.LineClient.refreshActiveRooms" title="Permalink to this definition">¶</a></dt>
+<code class="descname">refreshActiveRooms</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#line.LineClient.refreshActiveRooms" title="Permalink to this definition">¶</a></dt>
 <dd><p>Refresh active chat rooms</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="line.LineClient.refreshContacts">
-<tt class="descname">refreshContacts</tt><big>(</big><big>)</big><a class="headerlink" href="#line.LineClient.refreshContacts" title="Permalink to this definition">¶</a></dt>
+<code class="descname">refreshContacts</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#line.LineClient.refreshContacts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Refresh contacts of LineClient</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="line.LineClient.refreshGroups">
-<tt class="descname">refreshGroups</tt><big>(</big><big>)</big><a class="headerlink" href="#line.LineClient.refreshGroups" title="Permalink to this definition">¶</a></dt>
+<code class="descname">refreshGroups</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#line.LineClient.refreshGroups" title="Permalink to this definition">¶</a></dt>
 <dd><p>Refresh groups of LineClient</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="line.LineClient.sendMessage">
-<tt class="descname">sendMessage</tt><big>(</big><em>message</em>, <em>seq=0</em><big>)</big><a class="headerlink" href="#line.LineClient.sendMessage" title="Permalink to this definition">¶</a></dt>
+<code class="descname">sendMessage</code><span class="sig-paren">(</span><em>message</em>, <em>seq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineClient.sendMessage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Send a message</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -434,7 +448,7 @@ Line cleint.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
     <a href="../index.html">
         <img src="../_static/logo.png" width="200px"/>
@@ -455,11 +469,13 @@ Line cleint.</p>
       <li>Next: <a href="models.html" title="next chapter">Models</a></li>
   </ul></li>
 </ul>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../_sources/api/client.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/client.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
   <h3>Useful links:</h3>
   <ul>
     <li><a href="https://github.com/carpedm20/line">Github Repo</a></li>
@@ -510,7 +526,7 @@ Line cleint.</p>
     </li>
   </ul>
   
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />

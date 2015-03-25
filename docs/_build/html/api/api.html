@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>LineAPI &mdash; LINE api doc 0.1.5 documentation</title>
+    <title>LineAPI &mdash; LINE api doc 0.3.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/flasky.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.1.5',
+        VERSION:     '0.3.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/logo.ico"/>
-    <link rel="top" title="LINE api doc 0.1.5 documentation" href="../index.html" />
+    <link rel="top" title="LINE api doc 0.3.0 documentation" href="../index.html" />
     <link rel="next" title="Known issue" href="../issue.html" />
     <link rel="prev" title="Models" href="models.html" />
    
@@ -32,11 +32,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
 
   </head>
-  <body>
+  <body role="document">
   
   
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -48,14 +48,14 @@
         <li class="right" >
           <a href="models.html" title="Models"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">LINE api doc 0.1.5 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">LINE api doc 0.3.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="lineapi">
 <h1>LineAPI<a class="headerlink" href="#lineapi" title="Permalink to this headline">¶</a></h1>
@@ -69,47 +69,89 @@ other API here and use it as your way.</p>
 <h2>LineAPI<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="line.LineAPI">
-<em class="property">class </em><tt class="descclassname">line.</tt><tt class="descname">LineAPI</tt><a class="headerlink" href="#line.LineAPI" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">line.</code><code class="descname">LineAPI</code><a class="headerlink" href="#line.LineAPI" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class is a wrapper of LINE API</p>
 <dl class="method">
 <dt id="line.LineAPI._acceptGroupInvitation">
-<tt class="descname">_acceptGroupInvitation</tt><big>(</big><em>groupId</em>, <em>seq=0</em><big>)</big><a class="headerlink" href="#line.LineAPI._acceptGroupInvitation" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_acceptGroupInvitation</code><span class="sig-paren">(</span><em>groupId</em>, <em>seq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI._acceptGroupInvitation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accept a group invitation</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="line.LineAPI._cancelGroupInvitation">
-<tt class="descname">_cancelGroupInvitation</tt><big>(</big><em>groupId</em>, <em>contactIds=</em>, <span class="optional">[</span><span class="optional">]</span><em>seq=0</em><big>)</big><a class="headerlink" href="#line.LineAPI._cancelGroupInvitation" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_cancelGroupInvitation</code><span class="sig-paren">(</span><em>groupId</em>, <em>contactIds=[]</em>, <em>seq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI._cancelGroupInvitation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cancel a group invitation</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="line.LineAPI._createGroup">
-<tt class="descname">_createGroup</tt><big>(</big><em>name</em>, <em>ids</em>, <em>seq=0</em><big>)</big><a class="headerlink" href="#line.LineAPI._createGroup" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_createGroup</code><span class="sig-paren">(</span><em>name</em>, <em>ids</em>, <em>seq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI._createGroup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a group</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="line.LineAPI._createRoom">
-<tt class="descname">_createRoom</tt><big>(</big><em>ids</em>, <em>seq=0</em><big>)</big><a class="headerlink" href="#line.LineAPI._createRoom" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_createRoom</code><span class="sig-paren">(</span><em>ids</em>, <em>seq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI._createRoom" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a chat room</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="line.LineAPI._findAndAddContactsByEmail">
+<code class="descname">_findAndAddContactsByEmail</code><span class="sig-paren">(</span><em>emails</em>, <em>seq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI._findAndAddContactsByEmail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find and add contacts by email</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineAPI._findAndAddContactsByMid">
+<code class="descname">_findAndAddContactsByMid</code><span class="sig-paren">(</span><em>mid</em>, <em>seq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI._findAndAddContactsByMid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find and add contacts by Mid</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineAPI._findAndAddContactsByPhone">
+<code class="descname">_findAndAddContactsByPhone</code><span class="sig-paren">(</span><em>phones</em>, <em>seq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI._findAndAddContactsByPhone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find and add contacts by phone</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineAPI._findAndAddContactsByUserid">
+<code class="descname">_findAndAddContactsByUserid</code><span class="sig-paren">(</span><em>userid</em>, <em>seq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI._findAndAddContactsByUserid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find and add contacts by Userid</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineAPI._findContactByUserid">
+<code class="descname">_findContactByUserid</code><span class="sig-paren">(</span><em>userid</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI._findContactByUserid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find contacts by Userid</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineAPI._findContactsByEmail">
+<code class="descname">_findContactsByEmail</code><span class="sig-paren">(</span><em>emails</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI._findContactsByEmail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find contacts by email</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineAPI._findContactsByPhone">
+<code class="descname">_findContactsByPhone</code><span class="sig-paren">(</span><em>phones</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI._findContactsByPhone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find contacts by phone</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="line.LineAPI._getAllContactIds">
-<tt class="descname">_getAllContactIds</tt><big>(</big><big>)</big><a class="headerlink" href="#line.LineAPI._getAllContactIds" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_getAllContactIds</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI._getAllContactIds" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get all contacts of your LINE account</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="line.LineAPI._getBlockedContactIds">
-<tt class="descname">_getBlockedContactIds</tt><big>(</big><big>)</big><a class="headerlink" href="#line.LineAPI._getBlockedContactIds" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_getBlockedContactIds</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI._getBlockedContactIds" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get all blocked contacts of your LINE account</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="line.LineAPI._getContacts">
-<tt class="descname">_getContacts</tt><big>(</big><em>ids</em><big>)</big><a class="headerlink" href="#line.LineAPI._getContacts" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_getContacts</code><span class="sig-paren">(</span><em>ids</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI._getContacts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get contact information list from ids</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -141,25 +183,25 @@ other API here and use it as your way.</p>
 
 <dl class="method">
 <dt id="line.LineAPI._getGroupIdsInvited">
-<tt class="descname">_getGroupIdsInvited</tt><big>(</big><big>)</big><a class="headerlink" href="#line.LineAPI._getGroupIdsInvited" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_getGroupIdsInvited</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI._getGroupIdsInvited" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get group id that you invited</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="line.LineAPI._getGroupIdsJoined">
-<tt class="descname">_getGroupIdsJoined</tt><big>(</big><big>)</big><a class="headerlink" href="#line.LineAPI._getGroupIdsJoined" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_getGroupIdsJoined</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI._getGroupIdsJoined" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get group id that you joined</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="line.LineAPI._getGroups">
-<tt class="descname">_getGroups</tt><big>(</big><em>ids</em><big>)</big><a class="headerlink" href="#line.LineAPI._getGroups" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_getGroups</code><span class="sig-paren">(</span><em>ids</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI._getGroups" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of group with ids</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="line.LineAPI._getProfile">
-<tt class="descname">_getProfile</tt><big>(</big><big>)</big><a class="headerlink" href="#line.LineAPI._getProfile" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_getProfile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI._getProfile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get profile information</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -185,49 +227,49 @@ other API here and use it as your way.</p>
 
 <dl class="method">
 <dt id="line.LineAPI._getRecentMessages">
-<tt class="descname">_getRecentMessages</tt><big>(</big><em>id</em>, <em>count=1</em><big>)</big><a class="headerlink" href="#line.LineAPI._getRecentMessages" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_getRecentMessages</code><span class="sig-paren">(</span><em>id</em>, <em>count=1</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI._getRecentMessages" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get recent messages from <cite>id</cite></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="line.LineAPI._getRoom">
-<tt class="descname">_getRoom</tt><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#line.LineAPI._getRoom" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_getRoom</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI._getRoom" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a chat room</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="line.LineAPI._get_json">
-<tt class="descname">_get_json</tt><big>(</big><em>url</em><big>)</big><a class="headerlink" href="#line.LineAPI._get_json" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_get_json</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI._get_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get josn from given url with saved session and headers</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="line.LineAPI._inviteIntoGroup">
-<tt class="descname">_inviteIntoGroup</tt><big>(</big><em>groupId</em>, <em>contactIds=</em>, <span class="optional">[</span><span class="optional">]</span><em>seq=0</em><big>)</big><a class="headerlink" href="#line.LineAPI._inviteIntoGroup" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_inviteIntoGroup</code><span class="sig-paren">(</span><em>groupId</em>, <em>contactIds=[]</em>, <em>seq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI._inviteIntoGroup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Invite contacts into group</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="line.LineAPI._inviteIntoRoom">
-<tt class="descname">_inviteIntoRoom</tt><big>(</big><em>roomId</em>, <em>contactIds=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#line.LineAPI._inviteIntoRoom" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_inviteIntoRoom</code><span class="sig-paren">(</span><em>roomId</em>, <em>contactIds=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI._inviteIntoRoom" title="Permalink to this definition">¶</a></dt>
 <dd><p>Invite contacts into room</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="line.LineAPI._leaveGroup">
-<tt class="descname">_leaveGroup</tt><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#line.LineAPI._leaveGroup" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_leaveGroup</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI._leaveGroup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Leave a group</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="line.LineAPI._leaveRoom">
-<tt class="descname">_leaveRoom</tt><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#line.LineAPI._leaveRoom" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_leaveRoom</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI._leaveRoom" title="Permalink to this definition">¶</a></dt>
 <dd><p>Leave a chat room</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="line.LineAPI._sendMessage">
-<tt class="descname">_sendMessage</tt><big>(</big><em>message</em>, <em>seq=0</em><big>)</big><a class="headerlink" href="#line.LineAPI._sendMessage" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_sendMessage</code><span class="sig-paren">(</span><em>message</em>, <em>seq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI._sendMessage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Send a message to <cite>id</cite>. <cite>id</cite> could be contact id or group id</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -240,20 +282,26 @@ other API here and use it as your way.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="line.LineAPI.get_json">
+<code class="descname">get_json</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI.get_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get josn from given url with saved session and headers</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="line.LineAPI.login">
-<tt class="descname">login</tt><big>(</big><big>)</big><a class="headerlink" href="#line.LineAPI.login" title="Permalink to this definition">¶</a></dt>
+<code class="descname">login</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI.login" title="Permalink to this definition">¶</a></dt>
 <dd><p>Login to LINE server.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="line.LineAPI.raise_error">
-<tt class="descname">raise_error</tt><big>(</big><em>msg</em><big>)</big><a class="headerlink" href="#line.LineAPI.raise_error" title="Permalink to this definition">¶</a></dt>
+<code class="descname">raise_error</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI.raise_error" title="Permalink to this definition">¶</a></dt>
 <dd><p>Error format</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="line.LineAPI.ready">
-<tt class="descname">ready</tt><big>(</big><big>)</big><a class="headerlink" href="#line.LineAPI.ready" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ready</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI.ready" title="Permalink to this definition">¶</a></dt>
 <dd><p>After login, make <cite>client</cite> and <cite>client_in</cite> instance
 to communicate with LINE server</p>
 </dd></dl>
@@ -267,7 +315,7 @@ to communicate with LINE server</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
     <a href="../index.html">
         <img src="../_static/logo.png" width="200px"/>
@@ -288,11 +336,13 @@ to communicate with LINE server</p>
       <li>Next: <a href="../issue.html" title="next chapter">Known issue</a></li>
   </ul></li>
 </ul>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../_sources/api/api.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/api.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
   <h3>Useful links:</h3>
   <ul>
     <li><a href="https://github.com/carpedm20/line">Github Repo</a></li>
@@ -343,7 +393,7 @@ to communicate with LINE server</p>
     </li>
   </ul>
   
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />

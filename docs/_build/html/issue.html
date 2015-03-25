@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Known issue &mdash; LINE api doc 0.1.5 documentation</title>
+    <title>Known issue &mdash; LINE api doc 0.3.0 documentation</title>
     
     <link rel="stylesheet" href="_static/flasky.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.1.5',
+        VERSION:     '0.3.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,18 +24,18 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/logo.ico"/>
-    <link rel="top" title="LINE api doc 0.1.5 documentation" href="index.html" />
+    <link rel="top" title="LINE api doc 0.3.0 documentation" href="index.html" />
     <link rel="prev" title="LineAPI" href="api/api.html" />
    
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
 
   </head>
-  <body>
+  <body role="document">
   
   
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -44,14 +44,14 @@
         <li class="right" >
           <a href="api/api.html" title="LineAPI"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">LINE api doc 0.1.5 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">LINE api doc 0.3.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="known-issue">
 <h1>Known issue<a class="headerlink" href="#known-issue" title="Permalink to this headline">¶</a></h1>
@@ -81,7 +81,7 @@ index cdec607..c34edb8 100644
     <span class="nv">buff</span> <span class="o">=</span> self.trans.readAll<span class="o">(</span>8<span class="o">)</span>
 -    val, <span class="o">=</span> unpack<span class="o">(</span><span class="s1">&#39;!d&#39;</span>, buff<span class="o">)</span>
 +    val, <span class="o">=</span> unpack<span class="o">(</span><span class="s1">&#39;&lt;d&#39;</span>, buff<span class="o">)</span>
-    <span class="k">return </span>val
+    <span class="k">return</span> val
 
   def __readString<span class="o">(</span>self<span class="o">)</span>:
 </pre></div>
@@ -94,7 +94,7 @@ index cdec607..c34edb8 100644
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
     <a href="index.html">
         <img src="_static/logo.png" width="200px"/>
@@ -116,11 +116,13 @@ index cdec607..c34edb8 100644
       <li>Previous: <a href="api/api.html" title="previous chapter">LineAPI</a></li>
   </ul></li>
 </ul>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/issue.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/issue.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
   <h3>Useful links:</h3>
   <ul>
     <li><a href="https://github.com/carpedm20/line">Github Repo</a></li>
@@ -171,7 +173,7 @@ index cdec607..c34edb8 100644
     </li>
   </ul>
   
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />

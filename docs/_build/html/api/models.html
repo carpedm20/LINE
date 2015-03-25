@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Models &mdash; LINE api doc 0.1.5 documentation</title>
+    <title>Models &mdash; LINE api doc 0.3.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/flasky.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.1.5',
+        VERSION:     '0.3.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/logo.ico"/>
-    <link rel="top" title="LINE api doc 0.1.5 documentation" href="../index.html" />
+    <link rel="top" title="LINE api doc 0.3.0 documentation" href="../index.html" />
     <link rel="next" title="LineAPI" href="api.html" />
     <link rel="prev" title="LineClient" href="client.html" />
    
@@ -32,11 +32,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
 
   </head>
-  <body>
+  <body role="document">
   
   
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -48,14 +48,14 @@
         <li class="right" >
           <a href="client.html" title="LineClient"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">LINE api doc 0.1.5 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">LINE api doc 0.3.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="models">
 <h1>Models<a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h1>
@@ -70,7 +70,7 @@ In most cases, you don&#8217;t have to create this instances, but if you want to
 <h2>LineMessage<a class="headerlink" href="#linemessage" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="line.LineMessage">
-<em class="property">class </em><tt class="descclassname">line.</tt><tt class="descname">LineMessage</tt><big>(</big><em>client</em>, <em>message</em><big>)</big><a class="headerlink" href="#line.LineMessage" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">line.</code><code class="descname">LineMessage</code><span class="sig-paren">(</span><em>client</em>, <em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineMessage" title="Permalink to this definition">¶</a></dt>
 <dd><p>LineMessage wrapper</p>
 </dd></dl>
 
@@ -79,10 +79,10 @@ In most cases, you don&#8217;t have to create this instances, but if you want to
 <h2>LineBase<a class="headerlink" href="#linebase" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="line.LineBase">
-<em class="property">class </em><tt class="descclassname">line.</tt><tt class="descname">LineBase</tt><a class="headerlink" href="#line.LineBase" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">line.</code><code class="descname">LineBase</code><a class="headerlink" href="#line.LineBase" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
 <dt id="line.LineBase.getRecentMessages">
-<tt class="descname">getRecentMessages</tt><big>(</big><em>count=1</em><big>)</big><a class="headerlink" href="#line.LineBase.getRecentMessages" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getRecentMessages</code><span class="sig-paren">(</span><em>count=1</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineBase.getRecentMessages" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get recent messages</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -96,7 +96,7 @@ In most cases, you don&#8217;t have to create this instances, but if you want to
 
 <dl class="method">
 <dt id="line.LineBase.sendImage">
-<tt class="descname">sendImage</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#line.LineBase.sendImage" title="Permalink to this definition">¶</a></dt>
+<code class="descname">sendImage</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineBase.sendImage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Send a image</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -110,7 +110,7 @@ In most cases, you don&#8217;t have to create this instances, but if you want to
 
 <dl class="method">
 <dt id="line.LineBase.sendImageWithURL">
-<tt class="descname">sendImageWithURL</tt><big>(</big><em>url</em><big>)</big><a class="headerlink" href="#line.LineBase.sendImageWithURL" title="Permalink to this definition">¶</a></dt>
+<code class="descname">sendImageWithURL</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineBase.sendImageWithURL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Send a image with given image url</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -124,7 +124,7 @@ In most cases, you don&#8217;t have to create this instances, but if you want to
 
 <dl class="method">
 <dt id="line.LineBase.sendMessage">
-<tt class="descname">sendMessage</tt><big>(</big><em>text</em><big>)</big><a class="headerlink" href="#line.LineBase.sendMessage" title="Permalink to this definition">¶</a></dt>
+<code class="descname">sendMessage</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineBase.sendMessage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Send a message</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -138,7 +138,7 @@ In most cases, you don&#8217;t have to create this instances, but if you want to
 
 <dl class="method">
 <dt id="line.LineBase.sendSticker">
-<tt class="descname">sendSticker</tt><big>(</big><em>stickerId='13'</em>, <em>stickerPackageId='1'</em>, <em>stickerVersion='100'</em>, <em>stickerText='[null]'</em><big>)</big><a class="headerlink" href="#line.LineBase.sendSticker" title="Permalink to this definition">¶</a></dt>
+<code class="descname">sendSticker</code><span class="sig-paren">(</span><em>stickerId='13'</em>, <em>stickerPackageId='1'</em>, <em>stickerVersion='100'</em>, <em>stickerText='[null]'</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineBase.sendSticker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Send a sticker</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -163,7 +163,7 @@ In most cases, you don&#8217;t have to create this instances, but if you want to
 <h2>LineContct<a class="headerlink" href="#linecontct" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="line.LineContact">
-<em class="property">class </em><tt class="descclassname">line.</tt><tt class="descname">LineContact</tt><big>(</big><em>client</em>, <em>contact</em><big>)</big><a class="headerlink" href="#line.LineContact" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">line.</code><code class="descname">LineContact</code><span class="sig-paren">(</span><em>client</em>, <em>contact</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineContact" title="Permalink to this definition">¶</a></dt>
 <dd><p>LineContact wrapper</p>
 <dl class="docutils">
 <dt>Attributes:</dt>
@@ -185,13 +185,13 @@ statusMessage   status message of contact</dd>
 </table>
 <dl class="attribute">
 <dt id="line.LineContact.groups">
-<tt class="descname">groups</tt><a class="headerlink" href="#line.LineContact.groups" title="Permalink to this definition">¶</a></dt>
+<code class="descname">groups</code><a class="headerlink" href="#line.LineContact.groups" title="Permalink to this definition">¶</a></dt>
 <dd><p>Groups that contact participates</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="line.LineContact.rooms">
-<tt class="descname">rooms</tt><a class="headerlink" href="#line.LineContact.rooms" title="Permalink to this definition">¶</a></dt>
+<code class="descname">rooms</code><a class="headerlink" href="#line.LineContact.rooms" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rooms that contact participates</p>
 </dd></dl>
 
@@ -202,7 +202,7 @@ statusMessage   status message of contact</dd>
 <h2>LineRoom<a class="headerlink" href="#lineroom" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="line.LineRoom">
-<em class="property">class </em><tt class="descclassname">line.</tt><tt class="descname">LineRoom</tt><big>(</big><em>client</em>, <em>room</em><big>)</big><a class="headerlink" href="#line.LineRoom" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">line.</code><code class="descname">LineRoom</code><span class="sig-paren">(</span><em>client</em>, <em>room</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineRoom" title="Permalink to this definition">¶</a></dt>
 <dd><p>Chat room wrapper</p>
 <dl class="docutils">
 <dt>Attributes:</dt>
@@ -223,13 +223,13 @@ statusMessage   status message of contact</dd>
 </table>
 <dl class="method">
 <dt id="line.LineRoom.getContactIds">
-<tt class="descname">getContactIds</tt><big>(</big><big>)</big><a class="headerlink" href="#line.LineRoom.getContactIds" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getContactIds</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#line.LineRoom.getContactIds" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get contact ids of room</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="line.LineRoom.invite">
-<tt class="descname">invite</tt><big>(</big><em>contact</em><big>)</big><a class="headerlink" href="#line.LineRoom.invite" title="Permalink to this definition">¶</a></dt>
+<code class="descname">invite</code><span class="sig-paren">(</span><em>contact</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineRoom.invite" title="Permalink to this definition">¶</a></dt>
 <dd><p>Invite into group</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -243,7 +243,7 @@ statusMessage   status message of contact</dd>
 
 <dl class="method">
 <dt id="line.LineRoom.leave">
-<tt class="descname">leave</tt><big>(</big><big>)</big><a class="headerlink" href="#line.LineRoom.leave" title="Permalink to this definition">¶</a></dt>
+<code class="descname">leave</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#line.LineRoom.leave" title="Permalink to this definition">¶</a></dt>
 <dd><p>Leave room</p>
 </dd></dl>
 
@@ -254,7 +254,7 @@ statusMessage   status message of contact</dd>
 <h2>LineGroup<a class="headerlink" href="#linegroup" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="line.LineGroup">
-<em class="property">class </em><tt class="descclassname">line.</tt><tt class="descname">LineGroup</tt><big>(</big><em>client</em>, <em>group=None</em>, <em>is_joined=True</em><big>)</big><a class="headerlink" href="#line.LineGroup" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">line.</code><code class="descname">LineGroup</code><span class="sig-paren">(</span><em>client</em>, <em>group=None</em>, <em>is_joined=True</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineGroup" title="Permalink to this definition">¶</a></dt>
 <dd><p>LineGroup wrapper</p>
 <dl class="docutils">
 <dt>Attributes:</dt>
@@ -281,13 +281,13 @@ invitee     list of contact of group invitee</dd>
 </table>
 <dl class="method">
 <dt id="line.LineGroup.getMemberIds">
-<tt class="descname">getMemberIds</tt><big>(</big><big>)</big><a class="headerlink" href="#line.LineGroup.getMemberIds" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getMemberIds</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#line.LineGroup.getMemberIds" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get member ids of group</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="line.LineGroup.leave">
-<tt class="descname">leave</tt><big>(</big><big>)</big><a class="headerlink" href="#line.LineGroup.leave" title="Permalink to this definition">¶</a></dt>
+<code class="descname">leave</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#line.LineGroup.leave" title="Permalink to this definition">¶</a></dt>
 <dd><p>Leave group</p>
 </dd></dl>
 
@@ -300,7 +300,7 @@ invitee     list of contact of group invitee</dd>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
     <a href="../index.html">
         <img src="../_static/logo.png" width="200px"/>
@@ -325,11 +325,13 @@ invitee     list of contact of group invitee</dd>
       <li>Next: <a href="api.html" title="next chapter">LineAPI</a></li>
   </ul></li>
 </ul>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../_sources/api/models.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/models.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
   <h3>Useful links:</h3>
   <ul>
     <li><a href="https://github.com/carpedm20/line">Github Repo</a></li>
@@ -380,7 +382,7 @@ invitee     list of contact of group invitee</dd>
     </li>
   </ul>
   
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
