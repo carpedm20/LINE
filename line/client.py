@@ -528,6 +528,13 @@ class LineClient(LineAPI):
                         sender   = self.getContactOrRoomOrGroupById(raw_sender)
                         receiver = self.getContactOrRoomOrGroupById(raw_receiver)
 
+                    if sender is None or receiver is None:
+                        contacts = self._getContacts([raw_sender, raw_receiver])
+                        if contacts:
+                            if len(contacts) == 2:
+                                sender = LineContact(self, contacts[0])
+                                receiver = LineContact(self, contacts[1])
+
                     yield (sender, receiver, message)
                 else:
                     print "[*] %s" % OT._VALUES_TO_NAMES[operation.type]
