@@ -17,15 +17,20 @@ Update
 
 **2015.03.31**
 
-A well-known problem ([issue](https://github.com/carpedm20/LINE/issues/9))of 2 hours authToken expiration that shows `code= 8 reason='EXPIRED'` error is finally SOLVED!
+authToken expiration [issue](https://github.com/carpedm20/LINE/issues/9) solved.
 
-You don't have to change your code because the new code automatically catch the expiration and update the authToken.
+1. update authToken automatically:
 
-But, you can manually update your authToken by:
+    $ pip install line --upgrade
 
-    from line import LineClient, LineGroup, LineContact
-    client = LineClient("ID", "PASSWORD")
-    client.updateAuthToken() # manual update
+2. update authToken manually:
+
+    $ pip install line --upgrade
+and
+    >>> from line import LineClient, LineGroup, LineContact
+    >>> client = LineClient("ID", "PASSWORD")
+    >>> client.updateAuthToken() # manual update
+    True
 
 **2014.08.08**
 
