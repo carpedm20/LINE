@@ -168,7 +168,7 @@ other API here and use it as your way.</p>
 - mid
 - displayNameOverridden
 - relation
-- <a href="#id2"><span class="problematic" id="id3">thumbnailUrl_</span></a>
+- thumbnailUrl
 - createdTime
 - facoriteTime
 - capableMyhome
@@ -304,6 +304,13 @@ other API here and use it as your way.</p>
 <code class="descname">ready</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI.ready" title="Permalink to this definition">¶</a></dt>
 <dd><p>After login, make <cite>client</cite> and <cite>client_in</cite> instance
 to communicate with LINE server</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="line.LineAPI.updateAuthToken">
+<code class="descname">updateAuthToken</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#line.LineAPI.updateAuthToken" title="Permalink to this definition">¶</a></dt>
+<dd><p>After login, update authToken to avoid expiration of
+authToken. This method skip the PinCode validation step.</p>
 </dd></dl>
 
 </dd></dl>

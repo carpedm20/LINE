@@ -45,6 +45,7 @@ class LineAPI(object):
     version     = "3.7.0"
     com_name    = ""
     revision    = 0
+    certificate = ""
 
     _session = requests.session()
     _headers = {}
@@ -55,6 +56,19 @@ class LineAPI(object):
         to communicate with LINE server
         """
         raise Exception("Code is removed because of the request of LINE corporation")
+
+    def updateAuthToken(self):
+        """
+        After login, update authToken to avoid expiration of
+        authToken. This method skip the PinCode validation step.
+        """
+        if self.certificate:
+            self.login()
+            self.tokenLogin()
+
+            return True
+        else:
+            self.raise_error("You need to login first. There is no valid certificate")
 
     def tokenLogin(self):
         self.transport = THttpClient.THttpClient(self.LINE_HTTP_URL)
@@ -87,15 +101,20 @@ class LineAPI(object):
 
         msg = self._client.loginWithIdentityCredentialForCertificate(
                 self.id, self.password, keyname, crypto, True, self.ip,
-                self.com_name, self.provider, "")
+                self.com_name, self.provider, self.certificate)
 
         self._headers['X-Line-Access'] = msg.verifier
         self._pinCode = msg.pinCode
 
-        print "Enter PinCode '%s' to your mobile phone in 2 minutes"\
-                % self._pinCode
+        if msg.type == 3:
+            print "Enter PinCode '%s' to your mobile phone in 2 minutes"\
+                    % self._pinCode
 
-        raise Exception("Code is removed because of the request of LINE corporation")
+            raise Exception("Code is removed because of the request of LINE corporation")
+        else:
+            self.authToken =self._headers['X-Line-Access'] = msg.authToken
+
+            return True
 
     def get_json(self, url):
         """Get josn from given url with saved session and headers"""
@@ -142,7 +161,7 @@ class LineAPI(object):
                     - mid
                     - displayNameOverridden
                     - relation
-                    - thumbnailUrl_
+                    - thumbnailUrl
                     - createdTime
                     - facoriteTime
                     - capableMyhome
