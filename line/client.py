@@ -40,6 +40,8 @@ class LineClient(LineAPI):
         Enter PinCode '9779' to your mobile phone in 2 minutes
         >>> client = LineClient("carpedm20@gmail.com", "xxxxxxxxxx")
         Enter PinCode '7390' to your mobile phone in 2 minutes
+        >>> client = LineClient(authToken="xxx ... xxx")
+        True
         """
 
         if not (authToken or id and password):
