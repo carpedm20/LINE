@@ -19,15 +19,24 @@ Update
 
 authToken expiration `issue`_ solved.
 
-1. update authToken automatically:
+update authToken **automatically**:
 
-   $ pip install line –upgrade
+::
 
-2. update authToken manually:
+    $ pip install line --upgrade
 
-   $ pip install line –upgrade and >>> from line import LineClient,
-   LineGroup, LineContact >>> client = LineClient(“ID”, “PASSWORD”) >>>
-   client.updateAuthToken() # manual update True
+There is nothing to change in your original code.
+
+update authToken **manually**:
+
+::
+
+    $ pip install line --upgrade
+    $ python
+    >>> from line import LineClient, LineGroup, LineContact
+    >>> client = LineClient("ID", "PASSWORD")
+    >>> client.updateAuthToken() # manual update
+    True
 
 **2014.08.08**
 
