@@ -22,6 +22,9 @@ authToken expiration [issue](https://github.com/carpedm20/LINE/issues/9) solved.
 update authToken **automatically**:
 
     $ pip install line --upgrade
+
+There is nothing to change in your original code.
+
 update authToken **manually**:
 
     $ pip install line --upgrade
