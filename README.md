@@ -19,14 +19,13 @@ Update
 
 authToken expiration [issue](https://github.com/carpedm20/LINE/issues/9) solved.
 
-1. update authToken automatically:
+update authToken **automatically**:
 
     $ pip install line --upgrade
-
-2. update authToken manually:
+update authToken **manually**:
 
     $ pip install line --upgrade
-and
+    $ python
     >>> from line import LineClient, LineGroup, LineContact
     >>> client = LineClient("ID", "PASSWORD")
     >>> client.updateAuthToken() # manual update
@@ -47,5 +46,3 @@ Author
 ------
 
 Taehoon Kim / [@carpedm20](http://carpedm20.github.io/about/)
-
-
