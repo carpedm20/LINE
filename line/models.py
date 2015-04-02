@@ -50,7 +50,7 @@ class LineBase(object):
         :param text: text message to send
         """
         try:
-            message = Message(to=self.id, text=text)
+            message = Message(to=self.id, text=text.encode('utf-8'))
             self._client.sendMessage(message)
 
             return True
