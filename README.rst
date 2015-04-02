@@ -1,23 +1,21 @@
 LINE
 ----
 
+|PyPi version| |PyPi downloads| |PyPi status| |PyPi license|
 
-**2014.08.08** Announcement: some codes are removed because of the
-request of LINE corporation. You can use library only with ``authToken``
-login.
-
-The documentation is available at
-`here <http://carpedm20.github.io/line/>`__
+-  Documentation : http://carpedm20.github.io/line/
+-  Developer Mailing List: `Google
+   Group <https://groups.google.com/forum/#!forum/line-python-developer>`__
 
 *May the LINE be with you...*
-
 
 Update
 ------
 
 **2015.03.31**
 
-authToken expiration `issue`_ solved.
+authToken expiration
+`issue <https://github.com/carpedm20/LINE/issues/9>`__ solved.
 
 update authToken **automatically**:
 
@@ -43,9 +41,6 @@ update authToken **manually**:
 Some codes are removed because of the request of LINE corporation. You
 can use library only with ``authToken`` login.
 
-.. _issue: https://github.com/carpedm20/LINE/issues/9
-
-
 Screenshot
 ----------
 
@@ -65,4 +60,3 @@ Taehoon Kim / [@carpedm20](http://carpedm20.github.io/about/)
    :target: https://pypi.python.org/pypi/line
 .. |PyPi license| image:: https://pypip.in/license/line/badge.svg?style=flat
    :target: https://pypi.python.org/pypi/line
-
