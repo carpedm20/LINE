@@ -15,7 +15,7 @@ LINE
 Update
 ------
 
-**2015.03.31**
+**2015.04.19**
 
 Sending multiple image with `sendImage` is solved.
 
