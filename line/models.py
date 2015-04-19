@@ -123,7 +123,7 @@ class LineBase(object):
         try:
             response = requests.get(url, stream=True)
 
-            message = Message(to=self.id, text=None)
+            message = Message(to=self.id, text="LINE" + str(time()))
             message.contentType = ContentType.IMAGE
             message.contentPreview = response.raw.read()
             #message.contentPreview = url.encode('utf-8')

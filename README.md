@@ -15,10 +15,6 @@ LINE
 Update
 ------
 
-**2015.04.19**
-
-Sending multiple image with `sendImage` is solved.
-
 **2015.03.31**
 
 authToken expiration [issue](https://github.com/carpedm20/LINE/issues/9) solved.
