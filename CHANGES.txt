@@ -1,6 +1,11 @@
 line
 ====
 
+0.5.0
+-----
+
+* sending multiple image with sendImage works
+
 0.4.2
 -----
 
