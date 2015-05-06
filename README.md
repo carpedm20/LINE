@@ -1,11 +1,6 @@
 LINE
 ----
 
-[![PyPi version](https://pypip.in/v/line/badge.png?style=flat)](https://pypi.python.org/pypi/line)
-[![PyPi downloads](https://pypip.in/d/line/badge.png?style=flat)](https://pypi.python.org/pypi/line)
-[![PyPi status](https://pypip.in/status/line/badge.svg?style=flat)](https://pypi.python.org/pypi/line)
-[![PyPi license](https://pypip.in/license/line/badge.svg?style=flat)](https://pypi.python.org/pypi/line)
-
 - Documentation : [http://carpedm20.github.io/line/](http://carpedm20.github.io/line/)
 - Developer Mailing List: [Google Group](https://groups.google.com/forum/#!forum/line-python-developer)
 

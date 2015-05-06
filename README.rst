@@ -1,8 +1,6 @@
 LINE
 ----
 
-|PyPi version| |PyPi downloads| |PyPi status| |PyPi license|
-
 -  Documentation : http://carpedm20.github.io/line/
 -  Developer Mailing List: `Google
    Group <https://groups.google.com/forum/#!forum/line-python-developer>`__
@@ -11,10 +9,6 @@ LINE
 
 Update
 ------
-
-**2015.03.31**
-
-Sending multiple image with ``sendImage`` is solved.
 
 **2015.03.31**
 
@@ -55,12 +49,3 @@ Author
 ------
 
 Taehoon Kim / [@carpedm20](http://carpedm20.github.io/about/)
-
-.. |PyPi version| image:: https://pypip.in/v/line/badge.png?style=flat
-   :target: https://pypi.python.org/pypi/line
-.. |PyPi downloads| image:: https://pypip.in/d/line/badge.png?style=flat
-   :target: https://pypi.python.org/pypi/line
-.. |PyPi status| image:: https://pypip.in/status/line/badge.svg?style=flat
-   :target: https://pypi.python.org/pypi/line
-.. |PyPi license| image:: https://pypip.in/license/line/badge.svg?style=flat
-   :target: https://pypi.python.org/pypi/line
