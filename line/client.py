@@ -276,7 +276,7 @@ class LineClient(LineAPI):
                 else:
                     break
 
-    def createGroupWithIds(self, ids=[]):
+    def createGroupWithIds(self, name, ids=[]):
         """Create a group with contact ids
 
         :param name: name of group
