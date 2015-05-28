@@ -10,6 +10,7 @@ import requests
 from time import time
 from datetime import datetime
 from curve.ttypes import Message, ContentType
+import json
 
 class LineMessage:
     """LineMessage wrapper"""
@@ -89,31 +90,33 @@ class LineBase(object):
 
     def sendImage(self, path):
         """Send a image
-        
+
         :param path: local path of image to send
         """
-        try:
-            img = open(path, 'r')
+        message = Message(to=self.id, text=None)
+        message.contentType = ContentType.IMAGE
+        message.contentPreview = None
+        message.contentMetadata = None
 
-            message = Message(to=self.id, text="LINE" + str(time()))
-            message.contentType = ContentType.IMAGE
-            message.contentPreview = img.read().encode('utf-8')
-
-            self.raise_error("not implemented yet")
-
-            url = None
-
-            message.contentMetadata = {
-                'PREVIEW_URL': url,
-                'DOWNLOAD_URL': url,
-                'PUBLIC': True,
-            }
-
-            self._client.sendMessage(message)
-
-            return True
-        except Exception as e:
-            raise e
+        message_id = self._client.sendMessage(message).id
+        files = {
+            'file': open(path, 'rb'),
+        }
+        params = {
+            'name': 'media',
+            'oid': message_id,
+            'size': len(open(path, 'rb').read()),
+            'type': 'image',
+            'ver': '1.0',
+        }
+        data = {
+            'params': json.dumps(params)
+        }
+        r = self._client.post_content('https://os.line.naver.jp/talk/m/upload.nhn', data=data, files=files)
+        if r.status_code != 201:
+            print 'upload image failure.'
+        r.content
+        return True
 
     def sendImageWithURL(self, url):
         """Send a image with given image url
