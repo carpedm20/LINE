@@ -451,7 +451,7 @@ class LineClient(LineAPI):
             try:
                 self._sendMessage(message, seq)
             except TalkException as e:
-                self.refreshAuthToken()
+                self.updateAuthToken()
                 try:
                     self._sendMessage(message, seq)
                 except Exception as e:
