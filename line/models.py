@@ -6,11 +6,13 @@
     :copyright: (c) 2014 by Taehoon Kim.
     :license: BSD, see LICENSE for more details.
 """
+import json
+import shutil
 import requests
+import tempfile
 from time import time
 from datetime import datetime
 from curve.ttypes import Message, ContentType
-import json
 
 class LineMessage:
     """LineMessage wrapper"""
@@ -114,8 +116,8 @@ class LineBase(object):
         }
         r = self._client.post_content('https://os.line.naver.jp/talk/m/upload.nhn', data=data, files=files)
         if r.status_code != 201:
-            print 'upload image failure.'
-        r.content
+            raise Exception('Upload image failure.')
+        #r.content
         return True
 
     def sendImageWithURL(self, url):
@@ -123,23 +125,17 @@ class LineBase(object):
 
         :param url: image url to send
         """
+        path = '%s/pythonLine.data' % tempfile.gettempdir()
+
+        r = requests.get(url, stream=True)
+        if r.status_code == 200:
+            with open(path, 'w') as f:
+                shutil.copyfileobj(r.raw, f)
+        else:
+            raise Exception('Download image failure.')
+
         try:
-            response = requests.get(url, stream=True)
-
-            message = Message(to=self.id, text="LINE" + str(time()))
-            message.contentType = ContentType.IMAGE
-            message.contentPreview = response.raw.read()
-            #message.contentPreview = url.encode('utf-8')
-
-            message.contentMetadata = {
-                'PREVIEW_URL': url,
-                'DOWNLOAD_URL': url,
-                'PUBLIC': "True",
-            }
-
-            self._client.sendMessage(message, seq=1)
-
-            return True
+            self.sendImage(path)
         except Exception as e:
             raise e
 

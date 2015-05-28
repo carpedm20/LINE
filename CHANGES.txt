@@ -1,6 +1,11 @@
 line
 ====
 
+0.6.0
+-----
+
+* sendImage() and sendImageWithURL() is fixed
+
 0.4.2
 -----
 

@@ -87,6 +87,20 @@ Then, choose anyone to send a hello world message, and send it away!
    >>> friend.sendMessage("hello world!")
    True
 
+If you want to send an `image`, you can use `sendImage()` with specific path for image
+
+.. code-block:: python
+
+   >>> friend.sendImage("./image.jpg") # use your path for image to send
+   True
+
+Or you can use an URL for image to send any `image` to your friends with `sendImageWithURL()`!
+
+.. code-block:: python
+
+   >>> friend.sendImageWithURL("https://avatars3.githubusercontent.com/u/3346407?v=3&s=460")
+   True
+
 If you want to send a `sticker` (which is one of the most fun features of LINE!)
 
 .. code-block:: python
