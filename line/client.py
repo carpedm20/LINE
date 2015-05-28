@@ -483,7 +483,7 @@ class LineClient(LineAPI):
         
             return self.getLineMessageFromMessage(messages)
 
-    def longPoll(self, count=50):
+    def longPoll(self, count=50, debug=False):
         """Receive a list of operations that have to be processed by original
         Line cleint.
 
@@ -511,6 +511,8 @@ class LineClient(LineAPI):
                     return
 
             for operation in operations:
+                if debug:
+                    print operation
                 if operation.type == OT.END_OF_OPERATION:
                     pass
                 elif operation.type == OT.SEND_MESSAGE:
