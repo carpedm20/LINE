@@ -449,11 +449,11 @@ class LineClient(LineAPI):
         """
         if self._check_auth():
             try:
-                self._sendMessage(message, seq)
+                return self._sendMessage(message, seq)
             except TalkException as e:
                 self.updateAuthToken()
                 try:
-                    self._sendMessage(message, seq)
+                    return self._sendMessage(message, seq)
                 except Exception as e:
                     self.raise_error(e)
 

@@ -10,6 +10,24 @@ LINE
 Update
 ------
 
+**2015.05.28**
+
+``sendImage`` and ``sendImageWithURL`` is fixed.
+
+To send an Image:
+
+::
+
+    >>> contact = client.contacts[0]
+    >>> contact.sendImage('./image.jpg')
+
+Or use:
+
+::
+
+    >>> contact = client.contacts[0]
+    >>> contact.sendImageWithURL('https://avatars3.githubusercontent.com/u/3346407?v=3&s=460')
+
 **2015.03.31**
 
 authToken expiration
