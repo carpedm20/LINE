@@ -549,6 +549,8 @@ class LineClient(LineAPI):
                                 receiver = LineContact(self, contacts[1])
 
                     yield (sender, receiver, message)
+                elif operation.type in [ 60, 61 ]:
+                    pass
                 else:
                     print "[*] %s" % OT._VALUES_TO_NAMES[operation.type]
                     print operation
