@@ -285,7 +285,7 @@ class LineAPI(object):
         except Exception as e:
             msg = e
             self.raise_error(msg)
-    
+
     def raise_error(self, msg):
         """Error format"""
         raise Exception("Error: %s" % msg)
@@ -293,3 +293,6 @@ class LineAPI(object):
     def _get_json(self, url):
         """Get josn from given url with saved session and headers"""
         return json.loads(self._session.get(url, headers=self._headers).text)
+
+    def post_content(self, url, data=None, files=None):
+        return self._session.post(url, headers=self._headers, data=data, files=files)

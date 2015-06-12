@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>LINE Episode I: A New Hope &mdash; LINE api doc 0.4.2 documentation</title>
+    <title>LINE Episode I: A New Hope &mdash; LINE api doc 0.6.4 documentation</title>
     
     <link rel="stylesheet" href="_static/flasky.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.4.2',
+        VERSION:     '0.6.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/logo.ico"/>
-    <link rel="top" title="LINE api doc 0.4.2 documentation" href="index.html" />
+    <link rel="top" title="LINE api doc 0.6.4 documentation" href="index.html" />
     <link rel="next" title="LineClient" href="api/client.html" />
     <link rel="prev" title="LINE manual" href="index.html" />
    
@@ -48,7 +48,7 @@
         <li class="right" >
           <a href="index.html" title="LINE manual"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">LINE api doc 0.4.2 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">LINE api doc 0.6.4 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -121,6 +121,16 @@ to login to LINE! But you have to choose which one to send a <cite>message</cite
 <p>Then, choose anyone to send a hello world message, and send it away!</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">friend</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">contacts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">friend</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s">&quot;hello world!&quot;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>If you want to send an <cite>image</cite>, you can use <cite>sendImage()</cite> with specific path for image</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">friend</span><span class="o">.</span><span class="n">sendImage</span><span class="p">(</span><span class="s">&quot;./image.jpg&quot;</span><span class="p">)</span> <span class="c"># use your path for image to send</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Or you can use an URL for image to send any <cite>image</cite> to your friends with <cite>sendImageWithURL()</cite>!</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">friend</span><span class="o">.</span><span class="n">sendImageWithURL</span><span class="p">(</span><span class="s">&quot;https://avatars3.githubusercontent.com/u/3346407?v=3&amp;s=460&quot;</span><span class="p">)</span>
 <span class="go">True</span>
 </pre></div>
 </div>
@@ -275,29 +285,6 @@ message sent by other <cite>contact</cite>, <cite>room</cite> or <cite>group</ci
   <ul>
     <li><a href="https://github.com/carpedm20/line">Github Repo</a></li>
     <li><a href="https://github.com/carpedm20/line/issues">Issue Tracker</a></li>
-  </ul>
-  <p><b>Package:</b></p>
-  <ul>
-    <li>
-      <a href="https://pypi.python.org/pypi/line/">
-        <img src="https://pypip.in/v/line/badge.png?style=flat"/>
-      </a>
-    </li>
-    <li>
-      <a href="https://pypi.python.org/pypi/line/">
-        <img src="https://pypip.in/d/line/badge.png?style=flat"/>
-      </a>
-    </li>
-    <li>
-      <a href="https://pypi.python.org/pypi/line/">
-        <img src="https://pypip.in/status/line/badge.svg?style=flat"/>
-      </a>
-    </li>
-    <li>
-      <a href="https://pypi.python.org/pypi/line/">
-        <img src="https://pypip.in/license/line/badge.svg?style=flat"/>
-      </a>
-    </li>
   </ul>
   <p><b>Github:</b></p>
   <ul>

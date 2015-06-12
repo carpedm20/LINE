@@ -449,11 +449,11 @@ class LineClient(LineAPI):
         """
         if self._check_auth():
             try:
-                self._sendMessage(message, seq)
+                return self._sendMessage(message, seq)
             except TalkException as e:
-                self.refreshAuthToken()
+                self.updateAuthToken()
                 try:
-                    self._sendMessage(message, seq)
+                    return self._sendMessage(message, seq)
                 except Exception as e:
                     self.raise_error(e)
 
@@ -483,7 +483,7 @@ class LineClient(LineAPI):
         
             return self.getLineMessageFromMessage(messages)
 
-    def longPoll(self, count=50):
+    def longPoll(self, count=50, debug=False):
         """Receive a list of operations that have to be processed by original
         Line cleint.
 
@@ -511,6 +511,8 @@ class LineClient(LineAPI):
                     return
 
             for operation in operations:
+                if debug:
+                    print operation
                 if operation.type == OT.END_OF_OPERATION:
                     pass
                 elif operation.type == OT.SEND_MESSAGE:
@@ -531,6 +533,13 @@ class LineClient(LineAPI):
                                 sender = m
                                 break
 
+                    # If sender is not found, check member list of room chat sent to
+                    if sender is None and type(receiver) is LineRoom:
+                        for m in receiver.contacts:
+                            if m.id == raw_sender:
+                                sender = m
+                                break
+
                     if sender is None or receiver is None:
                         self.refreshGroups()
                         self.refreshContacts()
@@ -547,6 +556,8 @@ class LineClient(LineAPI):
                                 receiver = LineContact(self, contacts[1])
 
                     yield (sender, receiver, message)
+                elif operation.type in [ 60, 61 ]:
+                    pass
                 else:
                     print "[*] %s" % OT._VALUES_TO_NAMES[operation.type]
                     print operation

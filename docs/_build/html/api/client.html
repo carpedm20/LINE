@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>LineClient &mdash; LINE api doc 0.4.2 documentation</title>
+    <title>LineClient &mdash; LINE api doc 0.6.4 documentation</title>
     
     <link rel="stylesheet" href="../_static/flasky.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.4.2',
+        VERSION:     '0.6.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/logo.ico"/>
-    <link rel="top" title="LINE api doc 0.4.2 documentation" href="../index.html" />
+    <link rel="top" title="LINE api doc 0.6.4 documentation" href="../index.html" />
     <link rel="next" title="Models" href="models.html" />
     <link rel="prev" title="LINE Episode I: A New Hope" href="../tutorial.html" />
    
@@ -48,7 +48,7 @@
         <li class="right" >
           <a href="../tutorial.html" title="LINE Episode I: A New Hope"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">LINE api doc 0.4.2 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">LINE api doc 0.6.4 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -147,7 +147,7 @@ everytime when you create a new <cite>LineClient</cite> instance.</p>
 
 <dl class="method">
 <dt id="line.LineClient.createGroupWithIds">
-<code class="descname">createGroupWithIds</code><span class="sig-paren">(</span><em>ids=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineClient.createGroupWithIds" title="Permalink to this definition">¶</a></dt>
+<code class="descname">createGroupWithIds</code><span class="sig-paren">(</span><em>name</em>, <em>ids=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineClient.createGroupWithIds" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a group with contact ids</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -387,7 +387,7 @@ everytime when you create a new <cite>LineClient</cite> instance.</p>
 
 <dl class="method">
 <dt id="line.LineClient.longPoll">
-<code class="descname">longPoll</code><span class="sig-paren">(</span><em>count=50</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineClient.longPoll" title="Permalink to this definition">¶</a></dt>
+<code class="descname">longPoll</code><span class="sig-paren">(</span><em>count=50</em>, <em>debug=False</em><span class="sig-paren">)</span><a class="headerlink" href="#line.LineClient.longPoll" title="Permalink to this definition">¶</a></dt>
 <dd><p>Receive a list of operations that have to be processed by original
 Line cleint.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -482,29 +482,6 @@ Line cleint.</p>
   <ul>
     <li><a href="https://github.com/carpedm20/line">Github Repo</a></li>
     <li><a href="https://github.com/carpedm20/line/issues">Issue Tracker</a></li>
-  </ul>
-  <p><b>Package:</b></p>
-  <ul>
-    <li>
-      <a href="https://pypi.python.org/pypi/line/">
-        <img src="https://pypip.in/v/line/badge.png?style=flat"/>
-      </a>
-    </li>
-    <li>
-      <a href="https://pypi.python.org/pypi/line/">
-        <img src="https://pypip.in/d/line/badge.png?style=flat"/>
-      </a>
-    </li>
-    <li>
-      <a href="https://pypi.python.org/pypi/line/">
-        <img src="https://pypip.in/status/line/badge.svg?style=flat"/>
-      </a>
-    </li>
-    <li>
-      <a href="https://pypi.python.org/pypi/line/">
-        <img src="https://pypip.in/license/line/badge.svg?style=flat"/>
-      </a>
-    </li>
   </ul>
   <p><b>Github:</b></p>
   <ul>
