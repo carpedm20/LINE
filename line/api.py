@@ -42,7 +42,7 @@ class LineAPI(object):
     LINE_SESSION_NAVER_URL = LINE_DOMAIN + "/authct/v1/keys/naver"
 
     ip          = "127.0.0.1"
-    version     = "3.7.0"
+    version     = "5.1.2"
     com_name    = ""
     revision    = 0
     certificate = ""
