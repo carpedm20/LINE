@@ -1,6 +1,11 @@
 line
 ====
 
+0.6.5
+-----
+
+* longPoll exception error fixed (thanks for @nengoz and @punneng)
+
 0.6.0
 -----
 
