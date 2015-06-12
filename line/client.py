@@ -533,6 +533,13 @@ class LineClient(LineAPI):
                                 sender = m
                                 break
 
+                    # If sender is not found, check member list of room chat sent to
+                    if sender is None and type(receiver) is LineRoom:
+                        for m in receiver.contacts:
+                            if m.id == raw_sender:
+                                sender = m
+                                break
+
                     if sender is None or receiver is None:
                         self.refreshGroups()
                         self.refreshContacts()
@@ -549,6 +556,8 @@ class LineClient(LineAPI):
                                 receiver = LineContact(self, contacts[1])
 
                     yield (sender, receiver, message)
+                elif operation.type in [ 60, 61 ]:
+                    pass
                 else:
                     print "[*] %s" % OT._VALUES_TO_NAMES[operation.type]
                     print operation
