@@ -1,6 +1,11 @@
 line
 ====
 
+0.6.8
+-----
+
+Add profileImage to LineContact. solve #39
+
 0.6.7
 -----
 

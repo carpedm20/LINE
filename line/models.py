@@ -250,7 +250,7 @@ class LineRoom(LineBase):
     """Chat room wrapper
 
     Attributes:
-        contacts           Contact list of chat room
+        contacts : Contact list of chat room
     """
     def __init__(self, client, room):
         """LineContact init
@@ -313,6 +313,10 @@ class LineContact(LineBase):
         self.id            = contact.mid
         self.name          = contact.displayName
         self.statusMessage = contact.statusMessage
+
+    @property
+    def profileImage(self):
+        return "http://dl.profile.line.naver.jp" + self._contact.picturePath
 
     @property
     def rooms(self):
