@@ -317,6 +317,7 @@ class LineContact(LineBase):
 
     @property
     def profileImage(self):
+        """Link for profile image"""
         return "http://dl.profile.line.naver.jp" + self._contact.picturePath
 
     @property
