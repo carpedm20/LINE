@@ -19,6 +19,7 @@ class LineMessage:
 
     def __init__(self, client, message):
         self._client = client
+        self._message = message
         self.id   = message.id
         self.text = message.text
 
