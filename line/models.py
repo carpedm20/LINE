@@ -38,8 +38,13 @@ class LineMessage:
         self.createdTime = datetime.fromtimestamp(message.createdTime/1000)
 
     def __repr__(self):
+        try:
+            ContentTypeText = ContentType._VALUES_TO_NAMES[self.contentType]
+        except KeyError:
+            #print "*** Unknow Content Type", self.contentType
+            ContentTypeText = self.contentType
         return 'LineMessage (contentType=%s, sender=%s, receiver=%s, msg="%s")' % (
-                    ContentType._VALUES_TO_NAMES[self.contentType],
+                    ContentTypeText,
                     self.sender,
                     self.receiver,
                     self.text

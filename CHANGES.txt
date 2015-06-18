@@ -1,6 +1,11 @@
 line
 ====
 
+0.6.7
+-----
+
+KeyError error handling for __repr__ in LineMessage (thanks to @anusoft)
+
 0.6.6
 -----
 
@@ -9,7 +14,7 @@ line
 0.6.5
 -----
 
-* longPoll exception error fixed (thanks for @nengoz and @punneng)
+* longPoll exception error fixed (thanks to @nengoz and @punneng)
 
 0.6.0
 -----
