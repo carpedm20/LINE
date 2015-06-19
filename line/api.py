@@ -137,6 +137,8 @@ class LineAPI(object):
                 if msg.authToken is not None:
                     self.authToken = self._headers['X-Line-Access'] = msg.authToken
                     return True
+                else:
+                    return False
             else:
                 msg = "Require device confirm"
                 self.raise_error(msg)
