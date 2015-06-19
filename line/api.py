@@ -40,6 +40,8 @@ class LineAPI(object):
     LINE_CERTIFICATE_URL   = LINE_DOMAIN + "/Q"
     LINE_SESSION_LINE_URL  = LINE_DOMAIN + "/authct/v1/keys/line"
     LINE_SESSION_NAVER_URL = LINE_DOMAIN + "/authct/v1/keys/naver"
+    
+    CERT_FILE = ".line.crt"
 
     ip          = "127.0.0.1"
     version     = "5.1.2"
@@ -99,20 +101,49 @@ class LineAPI(object):
         self.protocol = TCompactProtocol.TCompactProtocol(self.transport)
         self._client   = CurveThrift.Client(self.protocol)
 
+        try:
+            with open(self.CERT_FILE,'r') as f:
+                self.certificate = f.read()
+                f.close()
+        except:
+            self.certificate = ""
+
         msg = self._client.loginWithIdentityCredentialForCertificate(
                 self.id, self.password, keyname, crypto, True, self.ip,
                 self.com_name, self.provider, self.certificate)
 
-        self._headers['X-Line-Access'] = msg.verifier
-        self._pinCode = msg.pinCode
+        if msg.type == 1:
+            self.certificate = msg.certificate
+            self.authToken = self._headers['X-Line-Access'] = msg.authToken
+        elif msg.type == 2:
+            msg = "require QR code"
+            self.raise_error(msg)
+        elif msg.type == 3:
+            self._headers['X-Line-Access'] = msg.verifier
+            self._pinCode = msg.pinCode
 
-        if msg.type == 3:
             print "Enter PinCode '%s' to your mobile phone in 2 minutes"\
                     % self._pinCode
 
-            raise Exception("Code is removed because of the request of LINE corporation")
+            j = self.get_json(self.LINE_CERTIFICATE_URL)
+            self.verifier = j['result']['verifier']
+
+            msg = self._client.loginWithVerifierForCertificate(self.verifier)
+            if msg.type == 1:
+                if msg.certificate is not None:
+                    with open(self.CERT_FILE,'w') as f:
+                        f.write(msg.certificate)
+                    self.certificate = msg.certificate
+                if msg.authToken is not None:
+                    self.authToken = self._headers['X-Line-Access'] = msg.authToken
+                    return True
+            else:
+                msg = "Require device confirm"
+                self.raise_error(msg)
+
+            #raise Exception("Code is removed because of the request of LINE corporation")
         else:
-            self.authToken =self._headers['X-Line-Access'] = msg.authToken
+            self.authToken = self._headers['X-Line-Access'] = msg.authToken
 
             return True
 
