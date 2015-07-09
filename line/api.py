@@ -49,8 +49,11 @@ class LineAPI(object):
     revision    = 0
     certificate = ""
 
-    _session = requests.session()
     _headers = {}
+
+    def __init__(self):
+        object.__init__(self)
+        self._session = requests.session()
 
     def ready(self):
         """

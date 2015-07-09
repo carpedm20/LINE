@@ -43,6 +43,7 @@ class LineClient(LineAPI):
         >>> client = LineClient(authToken="xxx ... xxx")
         True
         """
+        LineAPI.__init__(self)
 
         if not (authToken or id and password):
             msg = "id and password or authToken is needed"
