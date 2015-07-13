@@ -203,14 +203,12 @@ class LineGroup(LineBase):
         except:
             self.creator = None
 
-        self.members = []
-        for member in group.members:
-            self.members.append(LineContact(client, member))
+        self.members = [LineContact(client, member) for member in group.members]
 
-        self.invitee = []
-        if group.invitee:
-            for member in group.invitee:
-                self.invitee.append(LineContact(client, member))
+        try:
+            self.invitee = [LineContact(client, member) for member in group.invitee]
+        except TypeError:
+            self.invitee = []
 
     def acceptGroupInvitation(self):
         if not self.is_joined:
@@ -265,9 +263,7 @@ class LineRoom(LineBase):
 
         self.id = room.mid
 
-        self.contacts = []
-        for contact in room.contacts:
-            self.contacts.append(LineContact(client, contact))
+        self.contacts = [LineContact(client, contact) for contact in room.contacts]
 
     def leave(self):
         """Leave room"""
@@ -323,22 +319,14 @@ class LineContact(LineBase):
     @property
     def rooms(self):
         """Rooms that contact participates"""
-        rooms = []
-
-        for room in self._client.rooms:
-            if self.id in room.getContactIds():
-                rooms.append(room)
+        rooms = [room for room in self._client.rooms if self.id in room.getContactIds()]
 
         return rooms
 
     @property
     def groups(self):
         """Groups that contact participates"""
-        groups = []
-
-        for group in self._client.groups:
-            if self.id in group.getMemberIds():
-                groups.append(room)
+        groups = [group for group in self._client.groups if self.id in group.getMemberIds()]
 
         return groups
 
