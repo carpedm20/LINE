@@ -584,7 +584,7 @@ class LineClient(LineAPI):
 
         :param messges: list of Message object
         """
-        return [LineMessage(self, message) for message in massages]
+        return [LineMessage(self, message) for message in messages]
 
     def _check_auth(self):
         """Check if client is logged in or not"""
