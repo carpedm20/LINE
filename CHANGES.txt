@@ -1,15 +1,20 @@
 line
 ====
 
+0.7.0
+-----
+
+* New session for every LineAPI instance #46
+
 0.6.8
 -----
 
-Add profileImage to LineContact. solve #39
+* Add profileImage to LineContact. solve #39
 
 0.6.7
 -----
 
-KeyError error handling for __repr__ in LineMessage (thanks to @anusoft)
+* KeyError error handling for __repr__ in LineMessage (thanks to @anusoft)
 
 0.6.6
 -----

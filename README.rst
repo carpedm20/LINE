@@ -1,6 +1,8 @@
 LINE
 ----
 
+|Join the chat at https://gitter.im/carpedm20/LINE|
+
 -  Documentation : http://carpedm20.github.io/line/
 -  Developer Mailing List: `Google
    Group <https://groups.google.com/forum/#!forum/line-python-developer>`__
@@ -67,3 +69,6 @@ Author
 ------
 
 Taehoon Kim / [@carpedm20](http://carpedm20.github.io/about/)
+
+.. |Join the chat at https://gitter.im/carpedm20/LINE| image:: https://badges.gitter.im/Join%20Chat.svg
+   :target: https://gitter.im/carpedm20/LINE?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
