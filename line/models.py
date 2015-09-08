@@ -145,6 +145,65 @@ class LineBase(object):
         except Exception as e:
             raise e
 
+    def sendFile(self, path, name = ''):
+        """Send a File
+
+        :param path: local path of File to send
+        """
+        if name != '':
+          file_name = name
+        else:
+          import ntpath
+          file_name = ntpath.basename(path)
+        message = Message(to=self.id, text=None)
+        message.contentType = 14
+        message.contentPreview = None
+        file_size = len(open(path, 'rb').read())
+        message.contentMetadata = {
+            'FILE_NAME': str(file_name),
+            'FILE_SIZE': str(file_size),
+        }
+
+        message_id = self._client.sendMessage(message).id
+        files = {
+            'file': open(path, 'rb'),
+        }
+        params = {
+            'name': file_name,
+            'oid': message_id,
+            'size': file_size,
+            'type': 'file',
+            'ver': '1.0',
+        }
+        data = {
+            'params': json.dumps(params)
+        }
+        r = self._client.post_content('https://os.line.naver.jp/talk/m/upload.nhn', data=data, files=files)
+        if r.status_code != 201:
+            raise Exception('Upload File failure.')
+        #r.content
+        return True
+
+    def sendFileWithURL(self, url, name = ''):
+        """Send a File with given File url
+
+        :param url: File url to send
+        """
+        from urlparse import urlparse
+        from os.path import basename
+        import urllib2
+
+        if name == '':
+          name = basename(urlparse(url).path)
+        file = urllib2.urlopen(url)
+        output = open('pythonLine.data','wb')
+        output.write(file.read())
+        output.close()
+        try:
+            self.sendFile('pythonLine.data', name)
+        except Exception as e:
+            raise e
+
     def getRecentMessages(self, count=1):
         """Get recent messages
         
