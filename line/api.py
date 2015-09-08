@@ -280,6 +280,10 @@ class LineAPI(object):
         """Accept a group invitation"""
         return self._client.acceptGroupInvitation(seq, groupId)
 
+    def _kickoutFromGroup(self, groupId, contactIds=[], seq=0):
+        """Kick a group members"""
+        return self._client.kickoutFromGroup(seq, groupId, contactIds)
+
     def _cancelGroupInvitation(self, groupId, contactIds=[], seq=0):
         """Cancel a group invitation"""
         return self._client.cancelGroupInvitation(seq, groupId, contactIds)
