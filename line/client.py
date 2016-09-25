@@ -112,7 +112,7 @@ class LineClient(LineAPI):
 
     def getContactByName(self, name):
         """Get a `contact` by name
-        
+
         :param name: name of a `contact`
         """
         for contact in self.contacts:
@@ -123,7 +123,7 @@ class LineClient(LineAPI):
 
     def getContactById(self, id):
         """Get a `contact` by id
-        
+
         :param id: id of a `contact`
         """
         for contact in self.contacts:
@@ -187,9 +187,9 @@ class LineClient(LineAPI):
         for c in self.contacts:
             if c.id == contact.mid:
                 self.raise_error("%s already exists" % contact.displayName)
-                return 
+                return
 
-        c = LineContact(self, contact.values()[0])
+        c = LineContact(self, contact)
         self.contacts.append(c)
 
         self.contacts.sort()
@@ -211,9 +211,9 @@ class LineClient(LineAPI):
         for c in self.contacts:
             if c.id == contact.mid:
                 self.raise_error("%s already exists" % contact.displayName)
-                return 
+                return
 
-        c = LineContact(self, contact.values()[0])
+        c = LineContact(self, contact)
         self.contacts.append(c)
 
         self.contacts.sort()
@@ -235,9 +235,9 @@ class LineClient(LineAPI):
         for c in self.contacts:
             if c.id == contact.mid:
                 self.raise_error("%s already exists" % contact.displayName)
-                return 
+                return
 
-        c = LineContact(self, contact.values()[0])
+        c = LineContact(self, contact)
         self.contacts.append(c)
 
         self.contacts.sort()
@@ -297,7 +297,7 @@ class LineClient(LineAPI):
     @check_auth
     def createGroupWithContacts(self, name, contacts=[]):
         """Create a group with contacts
-        
+
         :param name: name of group
         :param contacts: list of contacts
         """
@@ -317,7 +317,7 @@ class LineClient(LineAPI):
 
     def getGroupByName(self, name):
         """Get a group by name
-        
+
         :param name: name of a group
         """
         for group in self.groups:
@@ -328,7 +328,7 @@ class LineClient(LineAPI):
 
     def getGroupById(self, id):
         """Get a group by id
-        
+
         :param id: id of a group
         """
         for group in self.groups:
@@ -340,7 +340,7 @@ class LineClient(LineAPI):
     @check_auth
     def inviteIntoGroup(self, group, contacts=[]):
         """Invite contacts into group
-        
+
         :param group: LineGroup instance
         :param contacts: LineContact instances to invite
         """
@@ -363,7 +363,7 @@ class LineClient(LineAPI):
     @check_auth
     def leaveGroup(self, group):
         """Leave a group
-        
+
         :param group: LineGroup instance to leave
         """
         try:
@@ -408,7 +408,7 @@ class LineClient(LineAPI):
 
     def getRoomById(self, id):
         """Get a room by id
-        
+
         :param id: id of a room
         """
         for room in self.rooms:
@@ -420,7 +420,7 @@ class LineClient(LineAPI):
     @check_auth
     def inviteIntoRoom(self, room, contacts=[]):
         """Invite contacts into room
-        
+
         :param room: LineRoom instance
         :param contacts: LineContact instances to invite
         """
@@ -430,7 +430,7 @@ class LineClient(LineAPI):
     @check_auth
     def leaveRoom(self, room):
         """Leave a room
-        
+
         :param room: LineRoom instance to leave
         """
         try:
@@ -446,7 +446,7 @@ class LineClient(LineAPI):
     @check_auth
     def sendMessage(self, message, seq=0):
         """Send a message
-        
+
         :param message: LineMessage instance to send
         """
         try:
@@ -481,7 +481,7 @@ class LineClient(LineAPI):
         """
         id = messageBox.id
         messages = self._getRecentMessages(id, count)
-    
+
         return self.getLineMessageFromMessage(messages)
 
     @check_auth
@@ -489,7 +489,7 @@ class LineClient(LineAPI):
         """Receive a list of operations that have to be processed by original
         Line cleint.
 
-        :param count: number of operations to get from 
+        :param count: number of operations to get from
         :returns: a generator which returns operations
 
         >>> for op in client.longPoll():
@@ -593,4 +593,3 @@ class LineClient(LineAPI):
         else:
             msg = "you need to login"
             self.raise_error(msg)
-
