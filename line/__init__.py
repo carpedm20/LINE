@@ -13,7 +13,7 @@ from .api import LineAPI
 from .models import LineGroup, LineContact, LineRoom, LineBase, LineMessage
 
 __copyright__ = 'Copyright 2014 by Taehoon Kim'
-__version__ = '0.8.0'
+__version__ = '0.8.2'
 __license__ = 'BSD'
 __author__ = 'Taehoon Kim'
 __author_email__ = 'carpedm20@gmail.com'
