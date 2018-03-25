@@ -19,7 +19,7 @@ from curve.ttypes import TalkException, ToType, OperationType, Provider
 reload(sys)
 sys.setdefaultencoding("utf-8")
 
-EMAIL_REGEX = re.compile(r"[^@]+@[^@]+\.[^@]+")
+# EMAIL_REGEX = re.compile(r"[^@]+@[^@]+\.[^@]+")
 
 def check_auth(func):
     def wrapper_check_auth(*args, **kwargs):
@@ -75,11 +75,13 @@ class LineClient(LineAPI):
 
             self.tokenLogin()
             #self.ready()
-        else:
-            if EMAIL_REGEX.match(id):
-                self.provider = Provider.LINE # LINE
-            else:
-                self.provider = Provider.NAVER_KR # NAVER
+
+        self.provider = Provider.LINE # LINE
+        # else:
+        #     if EMAIL_REGEX.match(id):
+        #         self.provider = Provider.LINE # LINE
+        #     else:
+        #         self.provider = Provider.NAVER_KR # NAVER
 
             self.id = id
             self.password = password
